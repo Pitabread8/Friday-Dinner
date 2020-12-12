@@ -1,0 +1,21 @@
+body {
+	background-image: url(https://miro.medium.com/max/10368/1*o8tTGo3vsocTKnCUyz0wHA.jpeg)
+}
+
+.navbar {
+	list-style-type: none;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navbar a {
+	color: black;
+	text-decoration: none;
+	padding: 10px;
+}
+
+#navmain {
+	font-size: 18px;
+}
