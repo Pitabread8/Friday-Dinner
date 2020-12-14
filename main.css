@@ -6,13 +6,13 @@ body {
 
 header h1 {
 	color: #53826c;
-	font-size: 18px;
+	font-size: 36px;
 	display: flex;
 	align-self: center;
 	justify-content: center;
-	margin-top: 2px;
-	padding: 2px;
-	margin-bottom: 2px;
+	margin-top: 4px;
+	padding: 4px;
+	margin-bottom: 4px;
 }
 
 nav {
@@ -23,7 +23,7 @@ nav {
 
 nav ul {
 	list-style-type: none;
-	font-size: 14px;
+	font-size: 26px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -40,9 +40,9 @@ nav a {
 }
 
 #navmain {
-	font-size: 18px;
+	font-size: 30px;
 }
 
 .empty {
-	padding-bottom: 500px;
+	padding-bottom: 1000px;
 }
