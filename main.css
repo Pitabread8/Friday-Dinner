@@ -1,5 +1,9 @@
+:root {
+	--eggshell: #f4f1de;
+}
+
 body {
-	background-color: #f4f1de;
+	background-color: var(--eggshell);
 	margin: 0;
 	font-family: "Quicksand", monospace;
 }
@@ -29,18 +33,18 @@ nav ul {
 	justify-content: center;
 	background-color: #81b29a;
 	margin-top: 0;
-	/*border-radius: 0% 0% 5% 10%;*/
 	padding: 0;
 }
 
 nav a {
-	color: #f4f1de;
+	color: var(--eggshell);
 	text-decoration: none;
 	padding: 10px;
 }
 
 #navmain {
-	font-size: 30px;
+	color: #81b29a;
+	background-color: var(--eggshell);
 }
 
 .empty {
