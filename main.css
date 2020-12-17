@@ -1,16 +1,24 @@
-:root {
-	--eggshell: #f4f1de;
+:root {--eggshell: #f4f1de;}
+
+#home {
+	--main: #81b29a;
+	--shade: #53826c;
 }
+#info {
+	--main: #e07a5f;
+	--shade: #aa4c34;
+}
+
 
 body {
 	background-color: var(--eggshell);
 	margin: 0;
-	font-family: "Quicksand", monospace;
+	font-family: "Open Sans", monospace;
 }
 
-header h1 {
-	color: #53826c;
-	font-size: 36px;
+h1 {
+	color: var(--shade);
+	font-family: "Quicksand";
 	display: flex;
 	align-self: center;
 	justify-content: center;
@@ -18,6 +26,8 @@ header h1 {
 	padding: 4px;
 	margin-bottom: 4px;
 }
+
+header h1 {font-size: 36px;}
 
 nav {
   position: -webkit-sticky;
@@ -31,10 +41,12 @@ nav ul {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #81b29a;
+	background-color: var(--main);
 	margin-top: 0;
 	padding: 0;
 }
+
+ul, h2 {font-family: "Oswald", monospace;}
 
 nav a {
 	color: var(--eggshell);
@@ -44,11 +56,27 @@ nav a {
 }
 
 #navmain {
-	color: #81b29a;
+	color: var(--main);
 	background-color: var(--eggshell);
-    padding: 4px;
 }
 
-.empty {
-	padding-bottom: 1000px;
+.grid {
+    display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+    grid-gap: 25px;
+	margin: 25px;
+}
+
+.card {
+	text-align: center;
+	border-radius: 6px;
+	box-shadow: 0px 6px 0px 0px rgba(0, 0, 0, 0.4);
+	border: solid var(--eggshell);
+	border-width: 3px 3px 0 3px;
+}
+
+.card:hover {
+	border: solid rgba(0, 0, 0, 0.4);
+	border-width: 3px 3px 0 3px;
 }
