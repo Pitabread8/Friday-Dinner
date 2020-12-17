@@ -1,12 +1,15 @@
-:root {--eggshell: #f4f1de;}
+:root {
+	--eggshell: #f4f1de;
+	--darkegg: #8e8b79;
+}
 
 #home {
 	--main: #81b29a;
-	--shade: #53826c;
+	--shade: 83, 130, 108;
 }
 #info {
 	--main: #e07a5f;
-	--shade: #aa4c34;
+	--shade: 170, 76, 52;
 }
 
 
@@ -17,7 +20,7 @@ body {
 }
 
 h1 {
-	color: var(--shade);
+	color: rgb(var(--shade));
 	font-family: "Quicksand";
 	display: flex;
 	align-self: center;
@@ -71,12 +74,18 @@ nav a {
 .card {
 	text-align: center;
 	border-radius: 6px;
-	box-shadow: 0px 6px 0px 0px rgba(0, 0, 0, 0.4);
+	/* box-shadow: 0px 6px 0px 0px rgba(0, 0, 0, 0.4); */
+	/* box-shadow: 0px 6px 0px 0px rgba(193, 190, 172, 1); */
+	box-shadow: 0px 6px 0px 0px var(--darkegg);
 	border: solid var(--eggshell);
 	border-width: 3px 3px 0 3px;
+	color: var(--main)
 }
 
 .card:hover {
-	border: solid rgba(0, 0, 0, 0.4);
+	border: solid rgba(var(--shade), 0.4);
+	box-shadow: 0px 6px 0px 0px rgba(var(--shade), 0.8);
 	border-width: 3px 3px 0 3px;
+	background-color: var(--main);
+	color: var(--eggshell);
 }
