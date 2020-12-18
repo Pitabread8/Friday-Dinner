@@ -7,6 +7,12 @@
 	--main: #81b29a;
 	--shade: 83, 130, 108;
 }
+
+#analysis {
+	--main: #3D405B;
+	--shade: 21, 26, 49;
+}
+
 #info {
 	--main: #e07a5f;
 	--shade: 170, 76, 52;
