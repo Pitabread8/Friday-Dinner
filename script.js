@@ -1,3 +1,18 @@
+function createNav(num) {
+    let navlist = ["Home", "Analysis", "Simulator", "Info", "Sources"];
+    let filelist = ["index", "analysis", "sim", "info", "sources"];
+    for (i = 0; i < navlist.length; i++) {
+        let list = document.getElementById("navlist");
+        let item = document.createElement("li");
+        list.appendChild(item);
+        let link = document.createElement("a");
+        link.setAttribute("href", `${filelist[i]}.html`);
+        link.innerHTML = navlist[i];
+        if (i === num) {link.id = "navmain";}
+        item.appendChild(link);
+    }
+}
+
 function createCards() {
     let cardtitles = ["First Past the Post", "Two Round Runoff", "Instant Runoff/Alternative Vote", "Borda Count", "Condorcet Method", "Approval Voting", "Proportional Representation", "Score/Cardinal Voting"];
 

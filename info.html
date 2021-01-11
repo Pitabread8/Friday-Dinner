@@ -16,12 +16,8 @@
 		<h1>A New Vote</h1>
 		<nav>
 			<div class="sticky">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="analysis.html">Analysis</a></li>
-					<li><a href="sim.html">Simulator</a></li>
-					<li><a href="info.html" id="navmain">Info</a></li>
-					<li><a href="sources.html">Sources</a></li>
+				<ul id="navlist">
+					<script>createNav(3);</script>
 				</ul>
 			</div>
 		</nav>
@@ -32,5 +28,4 @@
 	</div>
 	<p id="info-p"></p>
 	<p id="ex"></p>
-	<script>readFile(example.txt);</script>
 </body>
