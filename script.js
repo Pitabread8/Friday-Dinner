@@ -1,3 +1,13 @@
+function createHead() {
+    let fontlist = ["Quicksand", "Open+Sans", "Oswald"];
+    for (i = 0; i < fontlist.length; i++) {
+        let font = document.createElement("link");
+        font.setAttribute("rel", "stylesheet");
+        font.setAttribute("href", `https://fonts.googleapis.com/css?family=${fontlist[i]}`);
+        document.head.appendChild(font);
+    }
+}
+
 function createNav(num) {
     let navlist = ["Home", "Analysis", "Simulator", "Info", "Sources"];
     let filelist = ["index", "analysis", "sim", "info", "sources"];
@@ -27,7 +37,7 @@ function createCards() {
         title.innerHTML = `${cardtitles[i]}`;
         card.appendChild(title);
 
-        card.addEventListener('mouseover', () => {
+        card.addEventListener('click', () => {
             showInfo(card.id);
         });
     }
