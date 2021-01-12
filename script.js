@@ -24,7 +24,7 @@ function createNav(num) {
 }
 
 function createCards() {
-    let cardtitles = ["First Past the Post", "Two Round Runoff", "Instant Runoff/Alternative Vote", "Borda Count", "Condorcet Method", "Approval Voting", "Proportional Representation", "Score/Cardinal Voting"];
+    let cardtitles = ["First Past the Post", "Alternative Vote", "Borda Count", "Condorcet Method", "Two Round Runoff", "Approval Voting", "Proportional Representation", "Score Voting"];
 
     for (i = 0; i < cardtitles.length; i++) {
         let card = document.createElement('div');
@@ -39,6 +39,11 @@ function createCards() {
 
         card.addEventListener('click', () => {
             showInfo(card.id);
+            let cards = document.getElementsByClassName("card");
+            for (i = 0; i < cards.length; i++) {
+                cards[i].className = "card";
+            }
+            card.classList.toggle("card-active");
         });
     }
 }
@@ -47,5 +52,4 @@ function showInfo(index) {
     let cardtext = ["a", "b", "c", "d", "e", "f", "g", "h"];
     let info = document.getElementById("info-p");
     info.innerHTML = `${cardtext[index]}`;
-    info.style.display = "inherit";
 }
