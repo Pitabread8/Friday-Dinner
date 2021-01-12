@@ -96,5 +96,5 @@ nav a {
 
 #info-p {
 	padding: 25px;
-	color: var(--shade);
+	color: rgb(var(--shade));
 }
