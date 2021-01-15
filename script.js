@@ -18,7 +18,7 @@ function createNav(num) {
         let link = document.createElement("a");
         link.setAttribute("href", `${filelist[i]}.html`);
         link.innerHTML = navlist[i];
-        if (i === num) {link.id = "navmain";}
+        if (i === num) { link.id = "navmain"; }
         item.appendChild(link);
     }
 }
