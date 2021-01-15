@@ -83,7 +83,7 @@ nav a {
 	box-shadow: 0px 6px 0px 0px var(--darkegg);
 	border: solid var(--eggshell);
 	border-width: 3px 3px 0 3px;
-	color: var(--main)
+	color: var(--main);
 }
 
 .card:hover, .card-active {
