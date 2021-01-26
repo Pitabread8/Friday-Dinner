@@ -27,9 +27,7 @@ body {
 h1 {
 	color: rgb(var(--shade));
 	font-family: "Quicksand";
-	display: flex;
-	align-self: center;
-	justify-content: center;
+    text-align: center;
 	margin-top: 4px;
 	padding: 4px;
 	margin-bottom: 4px;
@@ -64,13 +62,13 @@ h3 {
 nav a {
 	color: var(--eggshell);
 	text-decoration: none;
-    padding: 10px;
+    padding: 0 10px 0 10px;
+    display: block;
 }
 
 #navmain, nav a:hover {
 	color: var(--main);
     background-color: var(--eggshell);
-    padding-bottom: 0;
 }
 
 #analysis main {
@@ -118,6 +116,13 @@ nav a {
     padding: 50px;
 }
 
+#nav-label {
+    width: max-content;
+    margin: auto;
+    color: rgb(var(--shade));
+}
+
+
 #error-text {
     display: flex;
     flex-direction: column;
@@ -125,11 +130,7 @@ nav a {
     width: 50%;
 }
 
-#nav-label {
-    width: max-content;
-    margin: auto;
-    color: rgb(var(--shade));
-}
+#error-line {text-align: left;}
 
 #return-link {
     text-decoration: none;
