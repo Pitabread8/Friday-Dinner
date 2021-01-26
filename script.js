@@ -1,5 +1,5 @@
 function createHead() {
-    let fontlist = ["Quicksand", "Open+Sans", "Oswald"];
+    let fontlist = ["Quicksand", "Oswald", "Pangolin"];
     for (i = 0; i < fontlist.length; i++) {
         let font = document.createElement("link");
         font.setAttribute("rel", "stylesheet");
@@ -29,12 +29,12 @@ function createCards() {
     for (i = 0; i < cardtitles.length; i++) {
         let card = document.createElement('div');
         card.className = "card";
-        card.id = `${i}`
+        card.id = i;
         grid = document.getElementById('grid');
         grid.appendChild(card);
 
         let title = document.createElement('h3');
-        title.innerHTML = `${cardtitles[i]}`;
+        title.innerHTML = cardtitles[i];
         card.appendChild(title);
 
         card.addEventListener('click', () => {
@@ -60,5 +60,5 @@ function showInfo(index) {
         "h"
     ];
     let info = document.getElementById("info-p");
-    info.innerHTML = `${cardtext[index]}`;
+    info.innerHTML = cardtext[index];
 }

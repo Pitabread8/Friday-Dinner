@@ -13,10 +13,15 @@
 	--shade: 21, 26, 49;
 }
 
+#error {
+    --main: #80A1C1;
+    --shade: 81, 115, 145;
+}
+
 body {
 	background-color: var(--eggshell);
 	margin: 0;
-	font-family: "Open Sans", monospace;
+	font-family: "Pangolin", monospace;
 }
 
 h1 {
@@ -60,16 +65,15 @@ nav a {
 	color: var(--eggshell);
 	text-decoration: none;
     padding: 10px;
-    margin: 5px;
 }
 
-#navmain {
+#navmain, nav a:hover {
 	color: var(--main);
     background-color: var(--eggshell);
     padding-bottom: 0;
 }
 
-#main {
+#analysis main {
     display: flex;
     align-items: flex-start;
 }
@@ -105,4 +109,30 @@ nav a {
     margin: 50px;
     margin-left: 25vw;
     max-width: 75vw
+}
+
+#error main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+#error-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 50%;
+}
+
+#nav-label {
+    width: max-content;
+    margin: auto;
+    color: rgb(var(--shade));
+}
+
+#return-link {
+    text-decoration: none;
+    color: var(--main);
+    padding: 4px;
 }
