@@ -14,8 +14,8 @@
 }
 
 #error {
-    --main: #80A1C1;
-    --shade: 81, 115, 145;
+    --main: #AD4865;
+    --shade: 122, 22, 59;
 }
 
 body {
@@ -116,13 +116,6 @@ nav a {
     padding: 50px;
 }
 
-#nav-label {
-    width: max-content;
-    margin: auto;
-    color: rgb(var(--shade));
-}
-
-
 #error-text {
     display: flex;
     flex-direction: column;
@@ -130,10 +123,18 @@ nav a {
     width: 50%;
 }
 
-#error-line {text-align: left;}
+#error-line {
+    text-align: left; 
+    width: max-content;
+}
 
 #return-link {
     text-decoration: none;
     color: var(--main);
+    width: max-content;
     padding: 4px;
+}
+
+#return-link:hover {
+    color: rgb(var(--shade));
 }
