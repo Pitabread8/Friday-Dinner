@@ -9,16 +9,22 @@ function createHead() {
 }
 
 function createNav(num) {
+    document.body.append(Object.assign(document.createElement("h1"), {id: "fd"}, {textContent: "A New Vote"}));
+    let nav = document.createElement("nav");
+    document.body.append(nav);
+    nav.appendChild(Object.assign(document.createElement("ul"), {id: "nav-list"}));
+
     let navlist = ["Home", "Analysis", "Simulator", "Sources"];
     let filelist = ["index", "analysis", "sim", "sources"];
     for (i = 0; i < navlist.length; i++) {
-        let list = document.getElementById("navlist");
+        let list = document.getElementById("nav-list");
         let item = document.createElement("li");
         list.appendChild(item);
+        
         let link = document.createElement("a");
         link.setAttribute("href", `${filelist[i]}.html`);
         link.innerHTML = navlist[i];
-        if (i === num) { link.id = "navmain"; }
+        if (i === num) { link.id = "nav-main"; }
         item.appendChild(link);
     }
 }
