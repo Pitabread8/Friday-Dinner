@@ -9,7 +9,7 @@ function createHead() {
 }
 
 function createNav(num) {
-    document.body.append(Object.assign(document.createElement("h1"), {id: "fd"}, {textContent: "A New Vote"}));
+    document.body.append(Object.assign(document.createElement("h1"), {textContent: "A New Vote"}));
     let nav = document.createElement("nav");
     document.body.append(nav);
     nav.appendChild(Object.assign(document.createElement("ul"), {id: "nav-list"}));
@@ -23,7 +23,7 @@ function createNav(num) {
         
         let link = document.createElement("a");
         link.setAttribute("href", `${filelist[i]}.html`);
-        link.innerHTML = navlist[i];
+        link.textContent = navlist[i];
         if (i === num) { link.id = "nav-main"; }
         item.appendChild(link);
     }
@@ -39,9 +39,7 @@ function createCards() {
         grid = document.getElementById('grid');
         grid.appendChild(card);
 
-        let title = document.createElement('h3');
-        title.innerHTML = cardtitles[i];
-        card.appendChild(title);
+        card.appendChild(Object.assign(document.createElement("h3"), {textContent: cardtitles[i]}));
 
         card.addEventListener('click', () => {
             showInfo(card.id);
@@ -62,5 +60,5 @@ function showInfo(index) {
         "f"
     ];
     let info = document.getElementById("info-p");
-    info.innerHTML = cardtext[index];
+    info.textContent = cardtext[index];
 }
