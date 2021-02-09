@@ -14,8 +14,8 @@ function createNav(num) {
     document.body.append(nav);
     nav.appendChild(Object.assign(document.createElement("ul"), {id: "nav-list"}));
 
-    let navlist = ["Home", "Analysis", "Simulator", "Sources"];
-    let filelist = ["index", "analysis", "sim", "sources"];
+    let navlist = ["Home", "Analysis", "Glossary", "Sources"];
+    let filelist = ["index", "analysis", "glossary", "sources"];
     for (i = 0; i < navlist.length; i++) {
         let list = document.getElementById("nav-list");
         let item = document.createElement("li");
