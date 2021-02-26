@@ -19,18 +19,18 @@
 }
 
 body {
-	background-color: var(--eggshell);
-	margin: 0;
-	font-family: "Pangolin", monospace;
+    background-color: var(--eggshell);
+    margin: 0;
+    font-family: "Pangolin", monospace;
 }
 
 h1 {
-	color: rgb(var(--shade));
-	font-family: "Quicksand";
+    color: rgb(var(--shade));
+    font-family: "Quicksand";
     text-align: center;
-	margin-top: 4px;
-	padding: 4px;
-	margin-bottom: 4px;
+    margin-top: 4px;
+    padding: 4px;
+    margin-bottom: 4px;
 }
 
 h3 {
@@ -43,71 +43,84 @@ nav {
     position: sticky;
     top: 0;
 }
-    nav ul {
-        list-style-type: none;
-        font-size: 26px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 0;
-        padding: 0;
-        background-color: var(--main);
-    }
-    ul, h3 {font-family: "Oswald", monospace;}
-        nav a {
-            color: var(--eggshell);
-            text-decoration: none;
-            padding: 0 10px 0 10px;
-            display: block;
-        }
-        #nav-main, nav a:hover {
-            color: var(--main);
-            background-color: var(--eggshell);
-        }
+
+nav ul {
+    list-style-type: none;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding: 0;
+    background-color: var(--main);
+}
+
+ul, h3 {font-family: "Oswald", monospace;}
+
+nav a {
+    color: var(--eggshell);
+    text-decoration: none;
+    padding: 0 10px 0 10px;
+    display: block;
+}
+
+#nav-main, nav a:hover {
+    color: var(--main);
+    background-color: var(--eggshell);
+}
 
 #analysis main {
     display: flex;
     align-items: flex-start;
 }
-    #grid {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 25px;
-        margin: 50px;
-        width: 15%;
-        position: fixed;
-    }
-        .card {
-            text-align: center;
-            border-radius: 6px;
-            color: var(--main);
-            border: solid 3px rgba(var(--shade));
-        }
-        .card:hover, .card-active {
-            background-color: var(--main);
-            color: var(--eggshell);
-        }
-    #info-content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }    
-        #info-p, table {
-            color: rgb(var(--shade));
-            margin: 50px 50px 0px 25vw;
-            max-width: 75vw;
-        }
-        table {
-            border-collapse: collapse;
-        }
-            th, td {
-                border: solid 1px var(--main);
-                padding: 8px;
-            }
 
-            tr:nth-child(even) {
-                background-color: #dddddd;
-            }
+#grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 25px;
+    margin: 50px;
+    width: 15%;
+    position: fixed;
+}
+
+.card {
+    text-align: center;
+    border-radius: 6px;
+    color: var(--main);
+    border: solid 3px rgba(var(--shade));
+}
+
+.card:hover, .card-active {
+    background-color: var(--main);
+    color: var(--eggshell);
+}
+
+#info-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#info-p, table {
+    color: rgb(var(--shade));
+    margin: 50px 50px 0px 25vw;
+    max-width: 75vw;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: solid 1px var(--main);
+    padding: 8px;
+    text-align: center;
+    width: 500px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
 
 #error main {
     display: flex;
@@ -115,22 +128,26 @@ nav {
     align-items: center;
     padding: 50px;
 }
-    #error-text {
-        display: flex;
-        flex-direction: column;
-        margin-left: 50px;
-        width: 50%;
-    }
-        #error-line {
-            text-align: left; 
-            width: max-content;
-        }
-        #return-link {
-            text-decoration: none;
-            color: var(--main);
-            width: max-content;
-            padding: 4px;
-        }
-        #return-link:hover {
-            color: rgb(var(--shade));
-        }
+
+#error-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 50%;
+}
+
+#error-line {
+    text-align: left; 
+    width: max-content;
+}
+
+#return-link {
+    text-decoration: none;
+    color: var(--main);
+    width: max-content;
+    padding: 4px;
+}
+
+#return-link:hover {
+    color: rgb(var(--shade));
+}
