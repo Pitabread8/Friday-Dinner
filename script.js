@@ -1,12 +1,12 @@
-function createHead() {
-    let fontlist = ["Quicksand", "Oswald", "Pangolin"];
-    for (i = 0; i < fontlist.length; i++) {
-        let font = document.createElement("link");
-        font.setAttribute("rel", "stylesheet");
-        font.setAttribute("href", `https://fonts.googleapis.com/css?family=${fontlist[i]}`);
-        document.head.appendChild(font);
-    }
-}
+// function createHead() {
+//     let fontlist = ["Quicksand", "Oswald", "Roboto"];
+//     for (i = 0; i < fontlist.length; i++) {
+//         let font = document.createElement("link");
+//         font.setAttribute("rel", "stylesheet");
+//         font.setAttribute("href", `https://fonts.googleapis.com/css?family=${fontlist[i]}`);
+//         document.head.appendChild(font);
+//     }
+// }
 
 function createNav(num) {
     document.body.append(Object.assign(document.createElement("h1"), {textContent: "A New Vote"}));

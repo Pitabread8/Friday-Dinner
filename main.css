@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand:wght@400..600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+
 :root {
 	--eggshell: #f4f1de;
 	--darkegg: #8e8b79;
@@ -21,7 +24,7 @@
 body {
     background-color: var(--eggshell);
     margin: 0;
-    font-family: "Pangolin", monospace;
+    font-family: "Roboto", monospace;
 }
 
 h1 {
@@ -53,9 +56,14 @@ nav ul {
     margin-top: 0;
     padding: 0;
     background-color: var(--main);
+    font-family: "Quicksand";
+    font-weight: 500;
 }
 
-ul, h3 {font-family: "Oswald", monospace;}
+ul, h3 {
+    font-family: "Quicksand", monospace;
+    font-weight: 600;
+}
 
 nav a {
     color: var(--eggshell);
@@ -67,6 +75,7 @@ nav a {
 #nav-main, nav a:hover {
     color: var(--main);
     background-color: var(--eggshell);
+    font-weight: 600;
 }
 
 #analysis main {
