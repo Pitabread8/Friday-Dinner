@@ -30,6 +30,7 @@ body {
 h1 {
     color: rgb(var(--shade));
     font-family: "Quicksand";
+    font-weight: 400;
     text-align: center;
     margin-top: 4px;
     padding: 4px;
