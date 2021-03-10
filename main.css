@@ -76,7 +76,6 @@ nav a {
 #nav-main, nav a:hover {
     color: var(--main);
     background-color: var(--eggshell);
-    font-weight: 600;
 }
 
 #analysis main {
