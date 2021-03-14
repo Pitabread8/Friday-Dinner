@@ -2,23 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
 
 :root {
-	--eggshell: #f4f1de;
-	--darkegg: #8e8b79;
+	--eggshell: #F4F1DE;
+	--darkegg: #8E8b79;
 }
 
 #home {
-	--main: #81b29a;
-	--shade: 83, 130, 108;
+	--main: #81B29A;
+	--shade: #53826C;
 }
 
 #analysis {
 	--main: #3D405B;
-	--shade: 21, 26, 49;
+	--shade: #151A31;
+}
+
+#sim {
+	--main: #E07A5F;
+	--shade: #AA4C34;
 }
 
 #error {
     --main: #AD4865;
-    --shade: 122, 22, 59;
+    --shade: #7A163B;
 }
 
 body {
@@ -28,7 +33,7 @@ body {
 }
 
 h1 {
-    color: rgb(var(--shade));
+    color: var(--shade);
     font-family: "Quicksand";
     font-weight: 400;
     text-align: center;
@@ -96,7 +101,7 @@ nav a {
     text-align: center;
     border-radius: 6px;
     color: var(--main);
-    border: solid 3px rgba(var(--shade));
+    border: solid 3px var(--shade);
 }
 
 .card:hover, .card-active {
@@ -111,7 +116,7 @@ nav a {
 }
 
 #info-p, table {
-    color: rgb(var(--shade));
+    color: var(--shade);
     margin: 50px 50px 0px 25vw;
     max-width: 75vw;
 }
@@ -158,5 +163,5 @@ tr:nth-child(even) {
 }
 
 #return-link:hover {
-    color: rgb(var(--shade));
+    color: var(--shade);
 }
