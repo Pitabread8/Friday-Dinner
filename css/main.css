@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand:wght@400..600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400..600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
 :root {
-	--eggshell: #F4F1DE;
-	--darkegg: #8E8b79;
+    --eggshell: #F4F1DE;
+    --darkegg: #8E8b79;
 }
 
 #home {
-	--main: #81B29A;
-	--shade: #53826C;
+    --main: #81B29A;
+    --shade: #53826C;
 }
 
 #analysis {
-	--main: #3D405B;
-	--shade: #151A31;
-}
-
-#sim {
-	--main: #E07A5F;
-	--shade: #AA4C34;
+    --main: #3D405B;
+    --shade: #151A31;
 }
 
 #error {
@@ -133,7 +133,7 @@ th, td {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #DDD;
 }
 
 #error main {

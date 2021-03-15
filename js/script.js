@@ -23,15 +23,15 @@ function createCards() {
     let cardtitles = ["First Past the Post", "Alternative Vote", "Approval Voting", "Score Voting"];
 
     for (i = 0; i < cardtitles.length; i++) {
-        let card = document.createElement('div');
+        let card = document.createElement("div");
         card.className = "card";
         card.id = i;
-        grid = document.getElementById('grid');
+        grid = document.getElementById("grid");
         grid.appendChild(card);
 
         card.appendChild(Object.assign(document.createElement("h3"), {textContent: cardtitles[i]}));
 
-        card.addEventListener('click', () => {
+        card.addEventListener("click", () => {
             showInfo(card.id);
             let cards = document.getElementsByClassName("card");
             for (i = 0; i < cards.length; i++) {
