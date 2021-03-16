@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Analysis</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="js/script.js"></script>
@@ -14,11 +15,9 @@
     <script>createNav(1);</script>
     <h1>What are the voting systems we are studying?</h1>
     <main>
-        <div id="grid">
-            <script>createCards();</script>
-        </div>
-        <div id="info-content">
-            <p id="info-p">Click one of the buttons to learn more about that type of voting.</p>
+        <div class="info-c">
+            <h2>First Past the Post</h2>
+            <p class="info-p">First Past the Post (FPTP) voting, commonly known as the Plurality vote, is the most common voting system. It is used everywhere in the world, in all sorts of situations. In the United States, people are pushing for FPTP (the Popular Vote) to replace the Electoral College.</p>
             <table>
                 <tr>
                     <th>Pros</th>
@@ -33,10 +32,22 @@
                     <td>Causes strategic voting</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>Vulnerable to spoiler effect/vote splitting</td>
+                    <td>Counting is easy and fast</td>
+                    <td>Vulnerable to spoiler effect</td>
                 </tr>
             </table>
+            <h2>How to Count</h2>
+            <p class="info-p">Voters vote for one (1) candidate each, and the candidate with the most votes wins.</p>
+            <div id="analysis-s">
+                <h2>Conclusion</h2>
+                <p class="info-p">This method is the best for any situation involving only two candidates. The winning candidate is generally the one nearest to the biggest cluster of voters, as shown below, regardless of its proximity to all of the voters overall.</p>
+            </div>
         </div>
+        <div class="info-c">
+            <h2>Click one of the buttons to learn more about that type of voting.</h2>
+            <p class="info-p">We analyzed four voting systems and their benefits in day-to-day use. You'll find a description, a pros & cons table, how to count votes, and a conclusion.</p>
+        </div>
+        <div id="menu"><script>createCards();</script></div>
     </main>
+    <footer><script>createFooter();</script></footer>
 </body>
