@@ -15,7 +15,7 @@ let font;
 // }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight / 1.25);
+    createCanvas(windowWidth, windowHeight / 1.3);
     background("#F4F1DE");
     strokeWeight(0);
     // textFont(font);

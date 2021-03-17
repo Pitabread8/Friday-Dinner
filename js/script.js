@@ -19,10 +19,12 @@ function createNav(num) {
     }
 }
 
+let sections = document.getElementsByClassName("info-c");
+let cards = document.getElementsByClassName("card");
+
 function createCards() {
-    let cardtitles = ["First Past the Post", "Alternative Vote", "Approval Voting", "Score Voting"];
-    let sections = document.getElementsByClassName("info-c");
-    sections[sections.length - 1].classList.toggle("info-active");
+    let cardtitles = ["Plurality Voting", "Alternative Vote", "Approval Voting", "Score Voting"];
+    // sections[sections.length - 1].classList.toggle("info-active");
 
     for (i = 0; i < cardtitles.length; i++) {
         let card = document.createElement("div");
@@ -34,13 +36,29 @@ function createCards() {
         card.appendChild(Object.assign(document.createElement("h3"), {textContent: cardtitles[i]}));
 
         card.addEventListener("click", () => {
-            let cards = document.getElementsByClassName("card");
             for (i = 0; i < cards.length; i++) {cards[i].className = "card";}
             card.classList.toggle("card-active");
-            for (i = 0; i < sections.length; i++) {sections[i].className = "info-c";}
-            sections[card.id].classList.toggle("info-active");
+            window.location.href = `#${sections[card.id].id}`;
         });
     }
+}
+
+let url = (window.location.pathname);
+let file = url.substring(url.lastIndexOf('/')+1);
+
+if (file.includes("analysis")) {
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        let positions = [];
+        for (s = 0; s < sections.length; s++) {positions.push(sections[s].offsetTop);}
+        let scroll = window.scrollY + 201;
+        let closest = positions.reduce((a, b) => {
+            return Math.abs(b - scroll) < Math.abs(a - scroll) ? b : a;
+        });
+        let index = positions.indexOf(closest);
+        for (i = 0; i < cards.length; i++) {cards[i].className = "card";}
+        cards[index].classList.toggle("card-active");
+    }   
 }
 
 function createFooter() {

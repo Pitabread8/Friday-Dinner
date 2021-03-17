@@ -45,8 +45,9 @@ h2 {
     color: var(--main);
     font-family: "Quicksand", monospace;
     font-weight: 500;
-    margin: 20px 0px 0px 25vw;
+    margin: 10px 0px 0px 25vw;
     max-width: 75vw;
+    /* padding-top: 20px; */
 }
 
 h3 {
@@ -107,11 +108,6 @@ small {
     font-family: "Quicksand", monospace;
 }
 
-#analysis main {
-    display: flex;
-    align-items: flex-start;
-}
-
 #menu {
     display: flex;
     text-align: center;
@@ -136,11 +132,9 @@ small {
     color: var(--eggshell);
 }
 
-.info-c {
-    display: none;
-}
+main a {color: var(--inherit);}
 
-.info-active {
+.info-c {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -165,12 +159,12 @@ th, td {
 
 tr:nth-child(even) {background-color: #DDD;}
 
-#analysis-s {
+.analysis-s {
     margin: 20px 50px 10px 25vw;
     border: 3px solid var(--main);
 }
 
-#analysis-s > * {
+.analysis-s > * {
     margin-top: 10px;
     margin-left: 10px;
 }
