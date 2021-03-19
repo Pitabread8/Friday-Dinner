@@ -41,13 +41,11 @@ h1 {
     margin-bottom: 4px;
 }
 
-h2 {
+h2, .transition  {
     color: var(--main);
     font-family: "Quicksand", monospace;
     font-weight: 500;
-    margin: 10px 0px 0px 25vw;
-    max-width: 75vw;
-    /* padding-top: 20px; */
+    margin: 0;
 }
 
 h3 {
@@ -90,6 +88,8 @@ nav a {
     background-color: var(--eggshell);
 }
 
+main {margin-bottom: 40px;}
+
 footer {
     position: fixed;
     bottom: 0;
@@ -108,13 +108,18 @@ small {
     font-family: "Quicksand", monospace;
 }
 
+#analysis main {
+    display: flex;
+    flex-direction: row;
+}
+
 #menu {
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
     margin: 50px;
-    width: 15%;
+    width: 15vw;
     position: fixed;
     top: 19%;
 }
@@ -134,40 +139,88 @@ small {
 
 main a {color: var(--inherit);}
 
+#intro-c {
+    margin: 10px 50px 10px 25vw;
+    max-width: 50vw;
+}
+
+.transition {margin: 40px 50px 0 25vw;}
+
 .info-c {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 50px 10px 25vw;
+    max-width: 50vw;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
-.info-p, table {
-    color: var(--shade);
-    margin: 10px 50px 10px 25vw;
-    max-width: 75vw;
+.row {margin-bottom: 20px;}
+
+.description {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
 }
+
+.column {
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+    margin-right: 30px;
+}
+
+.info-p {margin-top: 10px;}
+
+.info-p, table {color: var(--shade);}
 
 table {
     border-collapse: collapse;
+    width: 80%;
+    margin: auto;
 }
 
 th, td {
     border: 1px solid var(--main);
     padding: 8px;
     text-align: center;
-    width: 75vw;
+    width: 50vw;
 }
 
 tr:nth-child(even) {background-color: #DDD;}
 
 .analysis-s {
-    margin: 20px 50px 10px 25vw;
     border: 3px solid var(--main);
+    padding-bottom: 10px;
+    width: 80%;
+    margin: 20px auto auto auto;
 }
 
-.analysis-s > * {
-    margin-top: 10px;
-    margin-left: 10px;
+.analysis-s > * {margin: 10px 10px 0px;}
+
+.sim-s {margin-top: 10px;}
+
+.sim-s > * {margin-bottom: 0px;}
+
+.sim-img {
+   width: 50vw;
+   height: auto; 
 }
+
+#ballot {
+    margin: 120px 10px 10px 50px;
+    position: fixed;
+    top: 19%;
+    left: 75vw;
+    width: 15vw;
+    height: auto;
+}
+
 
 #error main {
     display: flex;

@@ -23,8 +23,7 @@ let sections = document.getElementsByClassName("info-c");
 let cards = document.getElementsByClassName("card");
 
 function createCards() {
-    let cardtitles = ["Plurality Voting", "Alternative Vote", "Approval Voting", "Score Voting"];
-    // sections[sections.length - 1].classList.toggle("info-active");
+    let cardtitles = ["Plurality Voting", "Ranked Voting", "Approval Voting", "Score Voting"];
 
     for (i = 0; i < cardtitles.length; i++) {
         let card = document.createElement("div");
@@ -52,12 +51,13 @@ if (file.includes("analysis")) {
         let positions = [];
         for (s = 0; s < sections.length; s++) {positions.push(sections[s].offsetTop);}
         let scroll = window.scrollY + 201;
-        let closest = positions.reduce((a, b) => {
-            return Math.abs(b - scroll) < Math.abs(a - scroll) ? b : a;
-        });
+        let closest = positions.reduce((a, b) => {return Math.abs(b - scroll) < Math.abs(a - scroll) ? b : a;});
         let index = positions.indexOf(closest);
         for (i = 0; i < cards.length; i++) {cards[i].className = "card";}
         cards[index].classList.toggle("card-active");
+
+        imglist = ["fptp", "ranked", "approval", "score"];
+        document.getElementById("ballot").src = `assets/images/${imglist[index]}ballot.png`;
     }   
 }
 

@@ -21,7 +21,7 @@ function setup() {
     // textFont(font);
 
     menu = createSelect();
-    menu.position(length, 137);
+    menu.position(length, 150);
     menu.option("Plurality");
     menu.option("Ranked");
     menu.option("Approval");
@@ -34,7 +34,7 @@ function setup() {
     for (v = 0; v < vnums; v++) { vs.push(new Voter(cs)); }
 
     vslider = createSlider(3, 20, 7, 1);
-    vslider.position(width / 2 - 400, 137);
+    vslider.position(width / 2 - 400, 150);
     vslider.style("width", "800px");
     vslider.addClass("slider");
 }
@@ -51,7 +51,7 @@ function draw() {
     let vval = vslider.value();
     textSize(20);
     fill("#E07A5F");
-    text(vval, width / 2 - 420, 32);
+    text(vval, width / 2 - 420, 13);
     textSize(12);
 
     if (vval > vnums) {
