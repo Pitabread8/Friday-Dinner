@@ -9,16 +9,12 @@ let cslider;
 let vslider;
 let menu;
 let font;
-
-// function preload() {
-//     font = loadFont("../assets/fonts/Roboto-Regular.ttf");
-// }
+let colors = ["#81B29A", "#53826C", "#3D405B", "#151A31", "#AD4865", "#7A163B", "#E07A5F", "#AA4C34"]
 
 function setup() {
     createCanvas(windowWidth, windowHeight / 1.3);
     background("#F4F1DE");
     strokeWeight(0);
-    // textFont(font);
 
     menu = createSelect();
     menu.position(length, 150);
@@ -28,8 +24,10 @@ function setup() {
     menu.option("Score");
 
     for (c = 0; c < cnums; c++) {
-        cs.push(new Candidate(c));
+        let random = Math.floor(Math.random() * colors.length);
+        cs.push(new Candidate(c, colors[random]));
         votes.push(0);
+        colors.splice(random, 1);
     }
     for (v = 0; v < vnums; v++) { vs.push(new Voter(cs)); }
 
@@ -203,10 +201,10 @@ class Voter extends Shape {
 }
 
 class Candidate extends Shape {
-    constructor(id) {
+    constructor(id, color) {
         super();
         this.id = id;
-        this.color = color(random(0, 255), random(0, 255), random(0, 255));
+        this.color = color;
     }
 
     display() {
