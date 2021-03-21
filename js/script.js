@@ -1,5 +1,6 @@
 function createNav(num) {
-    document.body.append(Object.assign(document.createElement("img"), {id: "logo"}, {src: "images/logo.png"}));
+    let imglist = ["about", "analysis", "sim", "resources", "404"]    
+    document.body.append(Object.assign(document.createElement("img"), {id: "logo"}, {src: `images/logos/${imglist[num]}.png`}));
     let nav = document.createElement("nav");
     document.body.append(nav);
     nav.appendChild(Object.assign(document.createElement("ul"), {id: "nav-list"}));
@@ -57,7 +58,7 @@ if (file.includes("analysis")) {
         cards[index].classList.toggle("card-active");
 
         imglist = ["fptp", "ranked", "approval", "score"];
-        document.getElementById("ballot").src = `images/${imglist[index]}ballot.png`;
+        document.getElementById("ballot").src = `images/ballots/${imglist[index]}.png`;
     }   
 }
 

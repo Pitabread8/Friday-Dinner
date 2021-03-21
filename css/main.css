@@ -27,8 +27,8 @@ body {
 #logo {
     width: auto;
     height: 50px;
-    margin: 20px auto;
     display: block;
+    margin: 20px auto;
 }
 
 h1 {
@@ -220,7 +220,6 @@ tr:nth-child(even) {background-color: #DDD;}
     width: 15vw;
     height: auto;
 }
-
 
 #error main {
     display: flex;
