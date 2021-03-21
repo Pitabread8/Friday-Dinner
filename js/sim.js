@@ -36,7 +36,7 @@ function setup() {
     cslider.style('width', '800px');
 
     vslider = createSlider(3, 20, 7, 1);
-    vslider.position(width / 2 - 400, 170);
+    vslider.position(width / 2 - 400, 180);
     vslider.style("width", "800px");
     vslider.addClass("slider");
 }
@@ -48,8 +48,10 @@ function draw() {
     let vval = vslider.value();
     textSize(20);
     fill("#E07A5F");
+    text("Candidates", width / 2 - 460, 10);
+    text("Voters", width / 2 - 440, 40);
     text(cval, width / 2 + 415, 10);
-    text(vval, width / 2 + 415, 30);
+    text(vval, width / 2 + 415, 40);
     textSize(12);
 
 	if (cval > cnums) {
@@ -111,7 +113,7 @@ function draw() {
     }
     textSize(16);
     if (winners.length === 1) {text(`The winner is Candidate ${winners}`, width - 3 * length, height - length);}
-    else {text(`It was a tie between Candidates ${winners.join(" and ")}`, width - 3 * length, height - length, width / 6, height);}
+    else {text(`It was a tie between Candidates ${winners.join(" and ")}`, width - 3 * length, height - length, width / 8, height);}
     winners = [];
 }
 
