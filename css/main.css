@@ -13,6 +13,11 @@
     --shade: #151A31;
 }
 
+#resources {
+    --main: #F2CC8F;
+    --shade: #BE9B61;
+}
+
 #error {
     --main: #AD4865;
     --shade: #7A163B;

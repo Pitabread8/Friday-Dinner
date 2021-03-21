@@ -8,13 +8,13 @@ let winners = [];
 let cslider;
 let vslider;
 let menu;
-let font;
-let colors = ["#81B29A", "#53826C", "#3D405B", "#151A31", "#AD4865", "#7A163B", "#E07A5F", "#AA4C34"]
+let colors = ["#81B29A", "#53826C", "#3D405B", "#151A31", "#AD4865", "#7A163B", "#E07A5F", "#AA4C34", "#F2CC8F", "#BE9B61"]
 
 function setup() {
-    createCanvas(windowWidth, windowHeight / 1.3);
+    createCanvas(windowWidth, windowHeight / 1.5);
     background("#F4F1DE");
     strokeWeight(0);
+    rectMode(CENTER)
 
     menu = createSelect();
     menu.position(length, 150);
@@ -31,8 +31,12 @@ function setup() {
     }
     for (v = 0; v < vnums; v++) { vs.push(new Voter(cs)); }
 
+    cslider = createSlider(3, 10, 3, 1);
+    cslider.position(width / 2 - 400, 150);
+    cslider.style('width', '800px');
+
     vslider = createSlider(3, 20, 7, 1);
-    vslider.position(width / 2 - 400, 150);
+    vslider.position(width / 2 - 400, 170);
     vslider.style("width", "800px");
     vslider.addClass("slider");
 }
@@ -40,17 +44,35 @@ function setup() {
 function draw() {
     background("#F4F1DE");
 
-    cs.forEach(c => c.display());
-    changeSystem();
-    
-    fill(224, 122, 95, 200)
-    rect(width - 3 * length, height - 2.5 * length, 5 * length)
-
+    let cval = cslider.value();
     let vval = vslider.value();
     textSize(20);
     fill("#E07A5F");
-    text(vval, width / 2 - 420, 13);
+    text(cval, width / 2 + 415, 10);
+    text(vval, width / 2 + 415, 30);
     textSize(12);
+
+	if (cval > cnums) {
+		for (c = 0; c < cval - cnums; c++) {
+            let random = Math.floor(Math.random() * colors.length);
+        cs.push(new Candidate(cnums + c, colors[random]));
+            votes.push(0);
+            colors.splice(random, 1);
+        }
+		cnums = cval;
+		for (v = 0; v < vnums; v++) {vs[v]["candidates"] = cs;}
+	}
+	if (cval < cnums) {
+		for (c = 0; c < cnums - cval; c++) {colors.push(cs.pop()["color"]);}
+		cnums = cval;
+		for (v = 0; v < vnums; v++) {vs[v]["candidates"] = cs;}
+	}
+
+    changeSystem();
+    cs.forEach(c => c.display());
+
+    fill(224, 122, 95, 200)
+    rect(width - 3 * length, height - 2.5 * length, 5 * length, height * 1.25)
 
     if (vval > vnums) {
         for (v = 0; v < vval - vnums; v++) { vs.push(new Voter(cs)); }
@@ -87,8 +109,9 @@ function draw() {
         if (votes[i] === final[0]) { winners.push(i); }
         text(`Candidate ${i} got ${votes[i]} votes`, width - 3 * length, height - ((i * 1) + 2) * length);
     }
-    if (winners.length === 1) { text(`The winner is Candidate ${winners}`, width - 3 * length, height - length); }
-    else { text(`It was a tie between Candidates ${winners.join(" and ")}`, width - 3 * length, height - length); }
+    textSize(16);
+    if (winners.length === 1) {text(`The winner is Candidate ${winners}`, width - 3 * length, height - length);}
+    else {text(`It was a tie between Candidates ${winners.join(" and ")}`, width - 3 * length, height - length, width / 6, height);}
     winners = [];
 }
 
@@ -127,6 +150,10 @@ class Voter extends Shape {
     constructor(candidates) {
         super();
         this.candidates = candidates;
+        this.vote = 0;
+    }
+
+    init() {
         this.distances = [];
         this.sum = 0;
         for (c = 0; c < this.candidates.length; c++) {
@@ -134,31 +161,33 @@ class Voter extends Shape {
             this.sum += c + 1;
         }
         this.sorted = this.distances.concat().sort((function (a, b) { return a - b }));
-        this.vote = 0;
     }
 
     fptp() {
+        this.init();
         this.vote = this.distances.indexOf(this.sorted[0]);
-        fill(this.candidates[this.vote]["color"])
+        fill(this.candidates[this.vote]["color"]);
         stroke(0);
         strokeWeight(1);
         circle(this.x, this.y, length * 2);
         noStroke();
     }
     borda() {
+        this.init();
         stroke(0);
         strokeWeight(1);
         circle(this.x, this.y, length * 2);
         let start = 0;
         for (let a in this.sorted) {
             this.vote = this.distances.indexOf(this.sorted[a]);
-            fill(this.candidates[this.vote]["color"])
+            fill(this.candidates[this.vote]["color"]);
             noStroke();
             arc(this.x, this.y, length * 2, length * 2, start, start + radians(((this.candidates.length - a) / this.sum) * 360), PIE)
             start += radians(((this.candidates.length - a) / this.sum) * 360);
         }
     }
     approval() {
+        this.init();
         this.approved = [];
         for (let d in this.distances) {
             if (this.distances[d] <= 700) {
@@ -178,6 +207,7 @@ class Voter extends Shape {
         }
     }
     score() {
+        this.init();
         this.approved = [];
         for (let d in this.distances) {
             if (this.distances[d] <= 1000) {
@@ -208,8 +238,9 @@ class Candidate extends Shape {
     }
 
     display() {
-        rectMode(CENTER)
-        fill(this.color);
+        let alpha = color(this.color)
+        alpha.setAlpha(215);
+        fill(alpha);
         stroke(0);
         strokeWeight(1);
         square(this.x, this.y, length * 3)
