@@ -9,8 +9,8 @@
 }
 
 #analysis {
-    --main: #3D405B;
-    --shade: #151A31;
+    --main: #64495A; 
+    --shade: #392131;
 }
 
 #resources {
@@ -33,7 +33,7 @@ body {
     width: auto;
     height: 50px;
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
 }
 
 h1 {

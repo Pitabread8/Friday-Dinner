@@ -8,7 +8,7 @@ let winners = [];
 let cslider;
 let vslider;
 let menu;
-let colors = ["#81B29A", "#53826C", "#3D405B", "#151A31", "#AD4865", "#7A163B", "#E07A5F", "#AA4C34", "#F2CC8F", "#BE9B61"]
+let colors = ["#81B29A", "#53826C", "#64495A", "#392131", "#AD4865", "#7A163B", "#E07A5F", "#AA4C34", "#F2CC8F", "#BE9B61"]
 
 function setup() {
     createCanvas(windowWidth, windowHeight / 1.5);
@@ -32,12 +32,12 @@ function setup() {
     for (v = 0; v < vnums; v++) { vs.push(new Voter(cs)); }
 
     cslider = createSlider(3, 10, 3, 1);
-    cslider.position(width / 2 - 400, 150);
-    cslider.style('width', '800px');
+    cslider.position(width / 2 - 200, 150);
+    cslider.style('width', '600px');
 
     vslider = createSlider(3, 20, 7, 1);
-    vslider.position(width / 2 - 400, 180);
-    vslider.style("width", "800px");
+    vslider.position(width / 2 - 200, 180);
+    vslider.style("width", "600px");
     vslider.addClass("slider");
 }
 
@@ -48,8 +48,8 @@ function draw() {
     let vval = vslider.value();
     textSize(20);
     fill("#E07A5F");
-    text("Candidates", width / 2 - 460, 10);
-    text("Voters", width / 2 - 440, 40);
+    text("Candidates", width / 2 - 260, 10);
+    text("Voters", width / 2 - 240, 40);
     text(cval, width / 2 + 415, 10);
     text(vval, width / 2 + 415, 40);
     textSize(12);
@@ -74,7 +74,7 @@ function draw() {
     cs.forEach(c => c.display());
 
     fill(224, 122, 95, 200)
-    rect(width - 3 * length, height - 2.5 * length, 5 * length, height * 1.25)
+    rect(width - 3 * length, height / 2, 5 * length, height)
 
     if (vval > vnums) {
         for (v = 0; v < vval - vnums; v++) { vs.push(new Voter(cs)); }
@@ -109,11 +109,11 @@ function draw() {
     let final = votes.concat().sort((function (a, b) { return b - a }));
     for (let i in votes) {
         if (votes[i] === final[0]) { winners.push(i); }
-        text(`Candidate ${i} got ${votes[i]} votes`, width - 3 * length, height - ((i * 1) + 2) * length);
+        text(`Candidate ${i} got ${votes[i]} votes`, width - 3 * length, height - ((i * 1) + 2.25) * length);
     }
     textSize(16);
-    if (winners.length === 1) {text(`The winner is Candidate ${winners}`, width - 3 * length, height - length);}
-    else {text(`It was a tie between Candidates ${winners.join(" and ")}`, width - 3 * length, height - length, width / 8, height);}
+    if (winners.length === 1) {text(`The winner is Candidate ${winners}`, width - 3 * length, height - 1.25 * length);}
+    else {text(`It was a tie between Candidates ${winners.join(" and ")}`, width - 3 * length, height - 1.25 * length, width / 8, height);}
     winners = [];
 }
 
