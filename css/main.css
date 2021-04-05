@@ -46,7 +46,7 @@ h1 {
     margin-bottom: 4px;
 }
 
-h2, .transition  {
+h2  {
     color: var(--main);
     font-family: "Quicksand", monospace;
     font-weight: 500;
@@ -144,24 +144,23 @@ small {
 
 main a {color: var(--inherit);}
 
-#intro-c {
-    margin: 10px 50px 10px 25vw;
-    max-width: 50vw;
-}
-
-.transition {margin: 40px 50px 0 25vw;}
-
 .info-c {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin: 0 50px 10px 25vw;
+    margin: 25px 50px 10px 25vw;
     max-width: 50vw;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
+    border-bottom: var(--shade) solid 5px;
+}
+
+#intro-c {
+    margin-top: 10px;
+    padding: 0;
 }
 
 .row {margin-bottom: 20px;}
@@ -173,21 +172,32 @@ main a {color: var(--inherit);}
     margin-bottom: 10px;
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
-    max-width: 30vw;
-    margin-right: 30px;
+.info-p {
+    margin-top: 10px;
+    color: var(--shade);
 }
 
-.info-p {margin-top: 10px;}
+#overviews {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 30px;
+    width: 80%;
+    margin: 10px auto;
+}
 
-.info-p, table {color: var(--shade);}
+#overviews h3 {
+    color: var(--main);
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+}
 
 table {
     border-collapse: collapse;
     width: 80%;
     margin: auto;
+    color: var(--shade);
 }
 
 th, td {
@@ -208,13 +218,17 @@ tr:nth-child(even) {background-color: #DDD;}
 
 .analysis-s > * {margin: 10px 10px 0px;}
 
-.sim-s {margin-top: 10px;}
+.sim-s {margin: 20px 0 0;}
 
-.sim-s > * {margin-bottom: 0px;}
+.sim-s > * {margin-bottom: 10px;}
 
-.sim-img {
-   width: 50vw;
-   height: auto; 
+.sim-s img {
+   width: 80%;
+   height: auto;
+   -moz-box-shadow: 0px 0px 30px 5px var(--shade);
+   -webkit-box-shadow: 0px 0px 30px 5px var(--shade);
+   box-shadow: 0px 0px 30px 5px var(--shade);
+   margin: 20px 10%;
 }
 
 #ballot {

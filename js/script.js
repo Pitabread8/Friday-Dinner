@@ -42,7 +42,7 @@ let sections = document.getElementsByClassName("info-c");
 let cards = document.getElementsByClassName("card");
 
 function createCards() {
-    let cardtitles = ["Plurality Voting", "Ranked Voting", "Approval Voting", "Score Voting"];
+    let cardtitles = ["Overview", "Plurality Voting", "Ranked Voting", "Approval Voting", "Score Voting"];
 
     for (i = 0; i < cardtitles.length; i++) {
         let card = document.createElement("div");
@@ -56,7 +56,10 @@ function createCards() {
         card.addEventListener("click", () => {
             for (i = 0; i < cards.length; i++) {cards[i].className = "card";}
             card.classList.toggle("card-active");
-            window.location.href = `#${sections[card.id].id}`;
+            let anchor = document.getElementById(sections[card.id].id);
+            for (i = 0; i < sections.length; i++) {sections[i].style.paddingTop = "initial";}
+            anchor.style.paddingTop = "35px";
+            window.location.href = `#${anchor.id}`;
         });
     }
 }
@@ -75,7 +78,7 @@ if (file.includes("analysis")) {
         for (i = 0; i < cards.length; i++) {cards[i].className = "card";}
         cards[index].classList.toggle("card-active");
 
-        imglist = ["fptp", "ranked", "approval", "score"];
+        imglist = ["fptp", "fptp", "ranked", "approval", "score"];
         document.getElementById("ballot").src = `images/ballots/${imglist[index]}.png`;
     }   
 }

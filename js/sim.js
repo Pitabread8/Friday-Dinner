@@ -48,10 +48,10 @@ function draw() {
     let vval = vslider.value();
     textSize(20);
     fill("#E07A5F");
-    text("Candidates", width / 2 - 260, 10);
-    text("Voters", width / 2 - 240, 40);
-    text(cval, width / 2 + 415, 10);
-    text(vval, width / 2 + 415, 40);
+    text("Candidates", width / 2 - 260, 20);
+    text("Voters", width / 2 - 240, 50);
+    text(cval, width / 2 + 415, 20);
+    text(vval, width / 2 + 415, 50);
     textSize(12);
 
 	if (cval > cnums) {

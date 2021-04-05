@@ -16,24 +16,53 @@
     <h1>What are the voting systems we are studying?</h1>
     <main>
         <div id="content">
-            <div id="intro-c">
-                <p class="info-p">We analyzed four voting systems and their benefits in day-to-day use. 
+            <div id="intro-c" class="info-c">
+                <p class="info-p">
+                    We analyzed four voting systems and their benefits in day-to-day use. 
                     You can test them yourself in our <a href="sim.html">voting simulator</a>. 
                     Definitions of common voting terms and more information about the systems can be found in the <a href="resources.html">resources</a> page.
                 </p>
+                <div id="overviews">
+                    <div>
+                        <h3>Plurality</h3>
+                        <p class="info-p">
+                            This method is the best for any situation involving only two candidates. 
+                            All other systems eventually use Plurality in two candidate elections.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Ranked</h3>
+                        <p class="info-p">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Approval</h3>
+                        <p class="info-p">
+                            This system is best for situations where people do not have enough information to choose or rank an option, or if the options could result in the exclusion 
+                            of some group members. 
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Score</h3>
+                        <p class="info-p">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        </p>
+                    </div>
+                </div>
             </div>
-            <h3 class="transition">The first system is</h3>
             <div id="fptp" class="info-c">
                 <div class="row">
                     <h2>Plurality</h2>
-                    <p class="info-p">Plurality voting, commonly known as First Past the Post, is the most common voting system. 
+                    <p class="info-p">
+                        Plurality voting, commonly known as First Past the Post, is the most common voting system. 
                         It is used everywhere in the world, in all sorts of situations. 
                         In the United States, people are pushing for Plurality to replace the Electoral College system (The National Popular Vote Interstate Compact).
                     </p>
                 </div>
                 <div class="row">
                     <h2>How to Count</h2>
-                    <p class="info-p">Voters vote for one (1) candidate each, and the candidate with the most votes wins.</p>
+                    <p class="info-p">Voters vote for one candidate each, and the candidate with the most votes wins.</p>
                 </div>
                 <table>
                     <tr>
@@ -42,7 +71,7 @@
                     </tr>
                     <tr>
                         <td>Requires only one choice</td>
-                        <td>Forces voters to make one decision</td>
+                        <td>Trends toward two main parties</td>
                     </tr>
                     <tr>
                         <td>Always picks the candidate with the most overall votes</td>
@@ -55,19 +84,20 @@
                 </table>
                 <div class="analysis-s">
                     <h2>Conclusion</h2>
-                    <p class="info-p">This method is the best for any situation involving only two candidates. 
+                    <p class="info-p">
+                        This method is the best for any situation involving only two candidates. 
                         All other systems eventually use Plurality in two candidate elections.
                     </p>
                 </div>
-                <div class="sim-s">
-                    <p class="info-p">
-                        The winning candidate is generally the one nearest to the biggest cluster of voters, regardless of its proximity to all of the voters overall. 
-                        Below, the majority of voters are on the right side, yet <span style="color: #9b6873;">Candidate 2</span>, which is isolated in the left, is the winner. 
-                        This is because both <span style="color: #d07b50;">Candidate 0</span> and <span style="color: #4058e3;">Candidate 1</span> are on the same side. 
-                        This causes the votes to be split among the two, allowing <span style="color: #9b6873;">Candidate 2</span> to win.
-                    </p>
-                    <img class="sim-img" src="images/sim/fptp1.png">
-                </div>
+                <figure class="sim-s">
+                    <figcaption class="info-p">
+                        The winning candidate in Plurality is generally the one nearest to the biggest cluster of voters, even if the cluster makes up a small percentage of all of 
+                        the voters. Below, the majority of voters are on the right side, but the largest cluster of voters is near <span style="color: #64495A;">Candidate 2</span>,
+                        which is isolated on the left. The votes on the right side are split evenly by <span style="color: #F2CC8F;">Candidate 0</span> and 
+                        <span style="color: #E07A5F;">Candidate 1</span>, removing the chance of either of them winning.
+                    </figcaption>
+                    <img src="images/sim/fptp1.png">
+                </figure>
             </div>
         </div>
         <img id="ballot" src="images/ballots/fptp.png"></div>
