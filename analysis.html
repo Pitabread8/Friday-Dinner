@@ -24,16 +24,15 @@
                 </p>
                 <div id="overviews">
                     <div>
-                        <h3>Plurality</h3>
+                        <h3>Plurality Voting</h3>
                         <p class="info-p">
-                            This method is the best for any situation involving only two candidates. 
-                            All other systems eventually use Plurality in two candidate elections.
+                            This method is the best for any situation involving only two candidates, or when the voting process needs to be quick. 
                         </p>
                     </div>
                     <div>
                         <h3>Ranked</h3>
                         <p class="info-p">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ranked voting is best in situations when the voter’s personal preferences need to be recorded, such as when people need to be sorted into groups. 
                         </p>
                     </div>
                     <div>
@@ -75,17 +74,17 @@
                     </tr>
                     <tr>
                         <td>Always picks the candidate with the most overall votes</td>
-                        <td>Causes strategic voting</td>
+                        <td>Causes <span id="tooltip" title="A tactic used when voting for someone other than a preferred candidate results in a more preferable outcome, like when two large parties dominate the system and voting for a smaller party will result in a wasted vote.">strategic voting</span></td>
                     </tr>
                     <tr>
                         <td>Counting is easy and fast</td>
-                        <td>Vulnerable to spoiler effect</td>
+                        <td>Vulnerable to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) canididate to win.">spoiler effect</span></td>
                     </tr>
                 </table>
                 <div class="analysis-s">
                     <h2>Conclusion</h2>
                     <p class="info-p">
-                        This method is the best for any situation involving only two candidates. 
+                        This method is the best for any situation involving only two options, or when the voting process needs to be quick. 
                         All other systems eventually use Plurality in two candidate elections.
                     </p>
                 </div>
@@ -96,11 +95,172 @@
                         which is isolated on the left. The votes on the right side are split evenly by <span style="color: #F2CC8F;">Candidate 0</span> and 
                         <span style="color: #E07A5F;">Candidate 1</span>, removing the chance of either of them winning.
                     </figcaption>
-                    <img src="images/sim/fptp1.png">
+                    <img src="images/sim/fptp.png">
+                </figure>
+            </div>
+            <div id="ranked" class="info-c">
+                <div class="row">
+                    <h2>Ranked Voting</h2>
+                    <p class="info-p">
+                        Ranked Voting is the most common alternative voting system to FPTP.
+                        <a href="#irv">IRV</a> is gaining popularity in public elections and is currently used in some city council and state primary elections in the U.S. 
+                        It was also used to elect legislators in Australia, Canada, Fiji, Hong Kong, and Papua New Guinea.
+                        <a href="#borda">Borda Count</a> is less common but is used in some elections in Slovenia, Iceland, Nauru, and Kiribati. 
+                    </p>
+                </div>
+                <div class="row">
+                    <h2>How to Count</h2>
+                    <p class="info-p">
+                        Voters rank the candidates from favorite to least favorite by marking which candidate is their first choice, which is their second choice, and so on. 
+                        There are a few different voting systems that count ranked ballots, and while each system has its own flaws, 
+                        any of them can be chosen to count votes using Ranked voting.
+                    </p>
+                </div>
+                <div class="row" id="irv">
+                    <h2>Instant Runoff Voting (IRV)</h2>
+                    <p class="info-p">
+                        Instant Runoff is also called Ranked <em>Choice</em> Voting and the Alternative Vote (although there are many more alternative voting systems). 
+                        In IRV, first place votes are counted in the same way as FPTP. 
+                        Then, the candidate with the least votes is eliminated, and the votes of those who voted for this candidate 
+                        as their first choice go to whomever they voted for as second choice. 
+                    </p>
+                </div>
+                <table>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                    <tr>
+                        <td>Reduces vulnerability to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) canididate to win.">spoiler effect</span></td>
+                        <td>Does not pass <span id="tooltip" title="In a system that passes this criterion, increasing a vote for a candidate should not worsen their chance of winning and decreasing a vote should not improve their chance of winning.">monotonicity criterion</span></td>
+                    </tr>
+                    <tr>
+                        <td>Removes need for second rounds of voting like primaries and runoffs</td>
+                        <td>Complicated and nontransparent counting method because voters’ second choices can become more varied among more candidates</td>
+                    </tr>
+                </table>
+                <div class="row" id="borda">
+                    <h2>Borda Count</h2>
+                    <p class="info-p">
+                        With Borda, the position of each candidate on each ballot gets added to the candidate’s total. 
+                        For example, if a candidate was the first choice, third choice, and fourth choice of three different voters, the candidate’s total would be eight. 
+                        The candidate with the smallest total is the winner. 
+                    </p>
+                </div>
+                <table>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                    <tr>
+                        <td>Simple to calculate because it only requires addition</td>
+                        <td>May create a reverse <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) canididate to win.">spoiler effect</span>; a bad candidate can help another bad candidate win by moving closer</td>
+                    </tr>
+                    <tr>
+                        <td>Removes need for second rounds of voting like primaries and runoffs</td>
+                        <td>Causes <span id="tooltip" title="A tactic used when voting for someone other than a preferred candidate results in a more preferable outcome, like when two large parties dominate the system and voting for a smaller party will result in a wasted vote.">strategic voting</span></td>
+                    </tr>
+                </table>
+                <div class="row">
+                    <h2>Condorcet Method</h2>
+                    <p class="info-p">
+                        Condorcet simulates FPTP elections between every pair of candidates based on voters’ choices. 
+                        For each pair of candidates, the number of voters who have ranked one over another are counted. 
+                        In the example ballot image to the right, candidates <span style="color: #E07A5F;">Red</span>, <span style="color: #F2CC8F;">Yellow</span>, and 
+                        <span style="color: #81B29A;">Green</span> are ranked. Between <span style="color: #E07A5F;">Red</span> and <span style="color: #81B29A;">Green</span>,
+                        <span style="color: #E07A5F;">Red</span> has a higher ranking. If a majority of the rest of the ballots in this election also rank 
+                        <span style="color: #E07A5F;">Red</span> higher than <span style="color: #81B29A;">Green</span>, <span style="color: #E07A5F;">Red</span> would win 
+                        the matchup. The same is applied to the <span style="color: #F2CC8F;">Yellow</span> and <span style="color: #81B29A;">Green</span> pair and the 
+                        <span style="color: #E07A5F;">Red</span> and <span style="color: #F2CC8F;">Yellow</span> pair. The candidate who wins the most matchups wins the whole 
+                        election. 
+                    </p>
+                </div>
+                <table>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                    <tr>
+                        <td>Reduces vulnerability to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) canididate to win.">spoiler effect</span></td>
+                        <td>Takes a long time to calculate on paper with lots of candidates because it requires a lot of pair ups</td>
+                    </tr>
+                    <tr>
+                        <td>Passes <span id="tooltip" title="In a system that passes this criterion, there is no situation in which a voter can obtain a preferable outcome by voting insincerely.">favorite betrayal criterion</span></td>
+                        <td>May fail to find a winner by creating a cycle, where no one candidate wins the most matchups.</td>
+                    </tr>
+                </table>
+                <div class="analysis-s" style="width: 100%;">
+                    <h2>Conclusion</h2>
+                    <p class="info-p">
+                        Ranked voting is best in situations when the voter’s personal preferences need to be recorded. 
+                        This works in situations where people need to be sorted into groups according to their preferences. 
+                        If one group has too many members, some voters can be sorted into other groups based on their second or third choices. 
+                        Thus, the voters are evenly split into groups that they want.
+                    </p>
+                </div>
+                <figure class="sim-s">
+                    <figcaption class="info-p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </figcaption>
+                    <img src="images/sim/ranked.png">
+                </figure>
+            </div>
+            <div id="approval" class="info-c">
+                <div class="row">
+                    <h2>Approval</h2>
+                    <p class="info-p">
+                        Approval Voting is not that common in general elections. It is currently being used in Fargo, ND and St. Louis, MO in the United States, as well as small
+                        towns in Western Europe. It also decides which candidates for the Secretary-General of the United Nations are presented for a final vote. Approval voting is one of the only 
+                        systems in which the number of candidates selected is up to the voter.
+                    </p>
+                </div>
+                <div class="row">
+                    <h2>How to Count</h2>
+                    <p class="info-p">
+                        Voters mark all the candidates they “approve of” or support. 
+                        The candidate with the most approval votes/who is marked by the most people wins the election.
+                    </p>
+                </div>
+                <table>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                    <tr>
+                        <td>Reduces vulnerability to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) canididate to win.">spoiler effect</span></td>
+                        <td>Preferences aren't indicated, so it does not satisfy the <span id="tooltip" title="In a system that passes this criterion, expressing support for a second or later choice candidate should not affect the winning chance of the first choice candidate">later-no-harm criterion</span></td>
+                    </tr>
+                    <tr>
+                        <td>Reduces <span id="tooltip" title="A tactic used when voting for someone other than a preferred candidate results in a more preferable outcome, like when two large parties dominate the system and voting for a smaller party will result in a wasted vote.">strategic voting</span></td>
+                        <td>Approval may select a winner that is not a majority candidate/preferred by a majority, which could cause <span id="tooltip" title="A situation in which the voter has the option to select more than one candidate on their ballot but strategically chooses to select only their top choice.">bullet voting</span></td>
+                    </tr>
+                    <tr>
+                        <td>Counting is easy and fast because it uses the same, familiar ballot of Plurality</td>
+                        <td>In scenarios where candidates of similar and different parties are all competing in the same election, Approval may pit candidates of the same party against each other to prevent <span id="tooltip" title="when two candidates of the same party/similar political alignment divide their supporters among themselves, likely preventing either of them from winning and leading to the Spoiler Effect.">vote splitting</td>
+                    </tr>
+                </table>
+                <div class="analysis-s">
+                    <h2>Conclusion</h2>
+                    <p class="info-p">
+                        This system is best for situations where people do not have enough information to choose or rank an option, 
+                        or if the options could result in the exclusion of some group members.
+                        Approval would be most useful in casual settings rather than public elections, when the decision has a small or temporary impact. 
+                    </p>
+                </div>
+                <figure class="sim-s">
+                    <figcaption class="info-p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </figcaption>
+                    <img src="images/sim/approval.png">
                 </figure>
             </div>
         </div>
-        <img id="ballot" src="images/ballots/fptp.png"></div>
+        <img id="ballot" src="images/ballots/blank.png"></div>
         <div id="menu"><script>createCards();</script></div>
     </main>
     <footer><script>createFooter();</script></footer>

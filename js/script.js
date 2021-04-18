@@ -7,13 +7,13 @@ function createNav(num) {
             let element = document.getElementById("logo");
             if (gif === true) {
                 element.src  = `images/logos/${imglist[num]}.png`;
-                element.style.height = "50px";
-                element.style.margin = "15px auto";
+                // element.style.height = "50px";
+                // element.style.margin = "15px auto";
             }
             else {
                 element.src = `images/logos/${imglist[num]}.gif`;
-                element.style.height = "63px";
-                element.style.margin = "10px auto";
+                // element.style.height = "63px";
+                // element.style.margin = "10px auto";
             }
             gif = !gif; 
         }
@@ -58,7 +58,7 @@ function createCards() {
             card.classList.toggle("card-active");
             let anchor = document.getElementById(sections[card.id].id);
             for (i = 0; i < sections.length; i++) {sections[i].style.paddingTop = "initial";}
-            anchor.style.paddingTop = "35px";
+            anchor.style.paddingTop = "45px";
             window.location.href = `#${anchor.id}`;
         });
     }
@@ -78,7 +78,7 @@ if (file.includes("analysis")) {
         for (i = 0; i < cards.length; i++) {cards[i].className = "card";}
         cards[index].classList.toggle("card-active");
 
-        imglist = ["fptp", "fptp", "ranked", "approval", "score"];
+        imglist = ["blank", "fptp", "ranked", "approval", "score"];
         document.getElementById("ballot").src = `images/ballots/${imglist[index]}.png`;
     }   
 }

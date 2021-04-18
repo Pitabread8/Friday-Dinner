@@ -36,6 +36,11 @@ body {
     margin: 15px auto;
 }
 
+/* #analysis #logo {
+    height: 63px;
+    margin: 10px auto;
+} */
+
 h1 {
     color: var(--shade);
     font-family: "Quicksand", monospace;
@@ -50,7 +55,7 @@ h2  {
     color: var(--main);
     font-family: "Quicksand", monospace;
     font-weight: 500;
-    margin: 0;
+    margin-bottom: 0;
 }
 
 h3 {
@@ -84,7 +89,7 @@ ul, h3 {
 nav a {
     color: var(--eggshell);
     text-decoration: none;
-    padding: 0 15px 0 15px;
+    padding: 5px 15px;
     display: block;
 }
 
@@ -163,8 +168,6 @@ main a {color: var(--inherit);}
     padding: 0;
 }
 
-.row {margin-bottom: 20px;}
-
 .description {
     display: flex;
     flex-direction: row;
@@ -209,6 +212,10 @@ th, td {
 
 tr:nth-child(even) {background-color: #DDD;}
 
+#tooltip {
+    border-bottom: 2px dotted var(--shade);
+}
+
 .analysis-s {
     border: 3px solid var(--main);
     padding-bottom: 10px;
@@ -225,9 +232,9 @@ tr:nth-child(even) {background-color: #DDD;}
 .sim-s img {
    width: 80%;
    height: auto;
-   -moz-box-shadow: 0px 0px 30px 5px var(--shade);
-   -webkit-box-shadow: 0px 0px 30px 5px var(--shade);
-   box-shadow: 0px 0px 30px 5px var(--shade);
+   -moz-box-shadow: 0px 0px 30px 3px var(--shade);;
+   -webkit-box-shadow: 0px 0px 30px 3px var(--shade);;
+   box-shadow: 0px 0px 30px 3px var(--shade);
    margin: 20px 10%;
 }
 
@@ -235,7 +242,7 @@ tr:nth-child(even) {background-color: #DDD;}
     margin: 120px 10px 10px 50px;
     position: fixed;
     top: 19%;
-    left: 75vw;
+    left: 78vw;
     width: 15vw;
     height: auto;
 }
