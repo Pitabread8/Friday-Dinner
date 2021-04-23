@@ -72,8 +72,11 @@ if (file.includes("analysis")) {
     function scrollFunction() {
         let positions = [];
         for (s = 0; s < sections.length; s++) {positions.push(sections[s].offsetTop);}
-        let scroll = window.scrollY + 201;
-        let closest = positions.reduce((a, b) => {return Math.abs(b - scroll) < Math.abs(a - scroll) ? b : a;});
+        
+        let scroll = window.scrollY + 421;
+        let closest = positions.reverse().find(e => e <= scroll);
+        positions.reverse()
+
         let index = positions.indexOf(closest);
         for (i = 0; i < cards.length; i++) {cards[i].className = "card";}
         cards[index].classList.toggle("card-active");

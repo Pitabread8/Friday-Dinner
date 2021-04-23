@@ -16,7 +16,7 @@
     <h1>What are the voting systems we are studying?</h1>
     <main>
         <div id="content">
-            <div id="intro-c" class="info-c">
+            <div id="intro" class="info-c">
                 <p class="info-p">
                     We analyzed four voting systems and their benefits in day-to-day use. 
                     You can test them yourself in our <a href="sim.html">voting simulator</a>. 
@@ -24,7 +24,7 @@
                 </p>
                 <div id="overviews">
                     <div>
-                        <h3>Plurality Voting</h3>
+                        <h3>Plurality</h3>
                         <p class="info-p">
                             This method is the best for any situation involving only two candidates, or when the voting process needs to be quick. 
                         </p>
@@ -78,7 +78,7 @@
                     </tr>
                     <tr>
                         <td>Counting is easy and fast</td>
-                        <td>Vulnerable to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) canididate to win.">spoiler effect</span></td>
+                        <td>Vulnerable to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) candidate to win.">spoiler effect</span></td>
                     </tr>
                 </table>
                 <div class="analysis-s">
@@ -86,6 +86,9 @@
                     <p class="info-p">
                         This method is the best for any situation involving only two options, or when the voting process needs to be quick. 
                         All other systems eventually use Plurality in two candidate elections.
+                        <br><br>
+                        Something to note is that because this system is susceptible to the spoiler effect, voters may strategically choose not to mark their first choice on the ballot. 
+                        Voters may vote for one of the majority candidates rather than the minority candidate they prefer to prevent a majority candidate that they really dislike from winning.
                     </p>
                 </div>
                 <figure class="sim-s">
@@ -102,7 +105,7 @@
                 <div class="row">
                     <h2>Ranked Voting</h2>
                     <p class="info-p">
-                        Ranked Voting is the most common alternative voting system to FPTP.
+                        Ranked voting is the most common alternative voting system to FPTP.
                         <a href="#irv">IRV</a> is gaining popularity in public elections and is currently used in some city council and state primary elections in the U.S. 
                         It was also used to elect legislators in Australia, Canada, Fiji, Hong Kong, and Papua New Guinea.
                         <a href="#borda">Borda Count</a> is less common but is used in some elections in Slovenia, Iceland, Nauru, and Kiribati. 
@@ -119,10 +122,10 @@
                 <div class="row" id="irv">
                     <h2>Instant Runoff Voting (IRV)</h2>
                     <p class="info-p">
-                        Instant Runoff is also called Ranked <em>Choice</em> Voting and the Alternative Vote (although there are many more alternative voting systems). 
+                        Instant Runoff is also called Ranked <em>Choice</em> voting and the Alternative Vote (although there are many more alternative voting systems). 
                         In IRV, first place votes are counted in the same way as FPTP. 
                         Then, the candidate with the least votes is eliminated, and the votes of those who voted for this candidate 
-                        as their first choice go to whomever they voted for as second choice. 
+                        as their first choice go to whomever they voted for as second choice. This procedure gets repeated until one candidate has at least 50% of the vote.
                     </p>
                 </div>
                 <table>
@@ -131,7 +134,7 @@
                         <th>Cons</th>
                     </tr>
                     <tr>
-                        <td>Reduces vulnerability to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) canididate to win.">spoiler effect</span></td>
+                        <td>Reduces vulnerability to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) candidate to win.">spoiler effect</span></td>
                         <td>Does not pass <span id="tooltip" title="In a system that passes this criterion, increasing a vote for a candidate should not worsen their chance of winning and decreasing a vote should not improve their chance of winning.">monotonicity criterion</span></td>
                     </tr>
                     <tr>
@@ -154,7 +157,7 @@
                     </tr>
                     <tr>
                         <td>Simple to calculate because it only requires addition</td>
-                        <td>May create a reverse <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) canididate to win.">spoiler effect</span>; a bad candidate can help another bad candidate win by moving closer</td>
+                        <td>May create a <span id="tooltip" title="A reverse situation of the spoiler effect, when one not as well liked candidate moves closer to another minority candidate and &quot;helps&quot; the latter defeat the majority candidate.">reverse spoiler effect</span></td>
                     </tr>
                     <tr>
                         <td>Removes need for second rounds of voting like primaries and runoffs</td>
@@ -181,7 +184,7 @@
                         <th>Cons</th>
                     </tr>
                     <tr>
-                        <td>Reduces vulnerability to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) canididate to win.">spoiler effect</span></td>
+                        <td>Reduces vulnerability to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) candidate to win.">spoiler effect</span></td>
                         <td>Takes a long time to calculate on paper with lots of candidates because it requires a lot of pair ups</td>
                     </tr>
                     <tr>
@@ -196,6 +199,9 @@
                         This works in situations where people need to be sorted into groups according to their preferences. 
                         If one group has too many members, some voters can be sorted into other groups based on their second or third choices. 
                         Thus, the voters are evenly split into groups that they want.
+                        <br><br>
+                        Something to note is that because spoiler effect may be present in some of the Ranked voting systems, voters may rank a candidate that is not their first choice as 
+                        their first choice. This may be because the voter prefers one majority candidate over another even though neither is their first choice.
                     </p>
                 </div>
                 <figure class="sim-s">
@@ -211,9 +217,8 @@
                 <div class="row">
                     <h2>Approval</h2>
                     <p class="info-p">
-                        Approval Voting is not that common in general elections. It is currently being used in Fargo, ND and St. Louis, MO in the United States, as well as small
-                        towns in Western Europe. It also decides which candidates for the Secretary-General of the United Nations are presented for a final vote. Approval voting is one of the only 
-                        systems in which the number of candidates selected is up to the voter.
+                        Approval voting is not that common in general elections. It is currently being used in Fargo, ND and St. Louis, MO in the United States, as well as small
+                        towns in Western Europe. Approval voting is one of the only systems in which the number of candidates selected is up to the voter.
                     </p>
                 </div>
                 <div class="row">
@@ -229,16 +234,16 @@
                         <th>Cons</th>
                     </tr>
                     <tr>
-                        <td>Reduces vulnerability to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) canididate to win.">spoiler effect</span></td>
+                        <td>Reduces vulnerability to <span id="tooltip" title="A specific situation of vote splitting, when one candidate &quot;steal's&quot; votes from a politically similar candidate that would have won, allowing a third (minority) candidate to win.">spoiler effect</span></td>
                         <td>Preferences aren't indicated, so it does not satisfy the <span id="tooltip" title="In a system that passes this criterion, expressing support for a second or later choice candidate should not affect the winning chance of the first choice candidate">later-no-harm criterion</span></td>
                     </tr>
                     <tr>
-                        <td>Reduces <span id="tooltip" title="A tactic used when voting for someone other than a preferred candidate results in a more preferable outcome, like when two large parties dominate the system and voting for a smaller party will result in a wasted vote.">strategic voting</span></td>
-                        <td>Approval may select a winner that is not a majority candidate/preferred by a majority, which could cause <span id="tooltip" title="A situation in which the voter has the option to select more than one candidate on their ballot but strategically chooses to select only their top choice.">bullet voting</span></td>
+                        <td>Prevents two-party systems</td>
+                        <td>May not pass <span id="tooltip" title="In a system that passes this criterion, anytime a candidate has over 50% of the vote, they should win. In the context of Approval voting, which is more vague, the &quot;most preferred&quot; candidate will not always win.">majority criterion</span>, which can cause <span id="tooltip" title="A situation in which the voter has the option to select more than one candidate on their ballot but strategically chooses to select only their top choice.">bullet voting</span></td>
                     </tr>
                     <tr>
                         <td>Counting is easy and fast because it uses the same, familiar ballot of Plurality</td>
-                        <td>In scenarios where candidates of similar and different parties are all competing in the same election, Approval may pit candidates of the same party against each other to prevent <span id="tooltip" title="when two candidates of the same party/similar political alignment divide their supporters among themselves, likely preventing either of them from winning and leading to the Spoiler Effect.">vote splitting</td>
+                        <td>May pit candidates of the same party against each other to prevent <span id="tooltip" title="when two candidates of the same party/similar political alignment divide their supporters among themselves, likely preventing either of them from winning and leading to the Spoiler Effect.">vote splitting</td>
                     </tr>
                 </table>
                 <div class="analysis-s">
@@ -246,7 +251,11 @@
                     <p class="info-p">
                         This system is best for situations where people do not have enough information to choose or rank an option, 
                         or if the options could result in the exclusion of some group members.
-                        Approval would be most useful in casual settings rather than public elections, when the decision has a small or temporary impact. 
+                        Approval would be most useful in casual settings rather than public elections, when the decision has a small or temporary impact.
+                        <br><br>
+                        Something to note is that because this system is susceptible to the reverse spoiler effect, voters may not vote for options that they want but are not their
+                        first choice in fear that they are reducing their first choice candidate's chance of winning.
+                        Remember, voting for all of the candidates on the ballot using this system is the same as voting for none because each candidate gets the same amount of points from you. 
                     </p>
                 </div>
                 <figure class="sim-s">
@@ -257,6 +266,59 @@
                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </figcaption>
                     <img src="images/sim/approval.png">
+                </figure>
+            </div>
+            <div id="score" class="info-c">
+                <div class="row">
+                    <h2>Score</h2>
+                    <p class="info-p">
+                        Score voting, also known as range voting, is a point-based system. Score voting is not in widespread use in any public elections, although it is quite similar 
+                        to the systems judges at the Olympics use and the product rating systems found in e-commerce.
+                    </p>
+                </div>
+                <div class="row">
+                    <h2>How to Count</h2>
+                    <p class="info-p">
+                        Voters individually rate each candidate, often on a scale of one to five or one to ten.
+                        The rating of each candidate on each ballot is totalled and the candidate with the highest sum wins.
+                        This system seems similar to the <a href="#borda">Borda Count</a>, but because each candidate is rated irrespective of the others, more than one candidate can
+                        have the same rank/score.
+                    </p>
+                </div>
+                <table>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                    <tr>
+                        <td>A candidate’s score is not affected by the other candidates they go against</td>
+                        <td>Vulnerable <span id="tooltip" title="A reverse situation of the spoiler effect, when one not as well liked candidate moves closer to another minority candidate and &quot;helps&quot; the latter defeat the majority candidate.">reverse spoiler effect</span>, leading to <span id="tooltip" title="A tactic used when voting for someone other than a preferred candidate results in a more preferable outcome, like when two large parties dominate the system and voting for a smaller party will result in a wasted vote.">strategic voting</span></td>
+                    </tr>
+                    <tr>
+                        <td>Fights against <span id="tooltip" title="A situation that can result from a majority rules system, in which the majority uses its power to advance its own interests, while ignoring the interests and/or welfare/rights of the minority/ies. This is not good in a democracy because everyone must be represented, not just the majority.">tyranny of the majority</span></td>
+                        <td>A candidate well-liked by a minority may defeat majority candidates that are not as polarized</td>
+                    </tr>
+                </table>
+                <div class="analysis-s">
+                    <h2>Conclusion</h2>
+                    <p class="info-p">
+                        Score voting is perfect in situations where something or someone is being judged/reviewed. Any situation that requires each candidate to be evaluated individually
+                        would also work well.
+                        <br><br>
+                        Something to note is that because this system is susceptible to the reverse spoiler effect, voters may rank candidates that are not their first choice lower than 
+                        they really believe in fear that they are reducing their first choice candidate's chance of winning.
+                        For example, they may give all candidates except their first choice the score of the lowest possible score (usually zero or one) and their first choice the 
+                        highest score (usually five or ten) even if they those numbers don't reflect their true feelings.
+                    </p>
+                </div>
+                <figure class="sim-s">
+                    <figcaption class="info-p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </figcaption>
+                    <img src="images/sim/score.png">
                 </figure>
             </div>
         </div>
