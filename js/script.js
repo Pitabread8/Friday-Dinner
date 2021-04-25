@@ -1,11 +1,11 @@
 function createNav(num) {
-    let imglist = ["about", "analysis", "sim", "resources", "404"];    
+    let imglist = ["about", "analysis", "sim", "resources", "404"];
     let gif = false;
-    document.body.append(Object.assign(document.createElement("img"), {id: "logo"}, {src: `images/logos/${imglist[num]}.png`}, {
-        onclick: function() {
+    document.body.append(Object.assign(document.createElement("img"), { id: "logo" }, { src: `images/logos/${imglist[num]}.png` }, {
+        onclick: function () {
             let element = document.getElementById("logo");
             if (gif === true) {
-                element.src  = `images/logos/${imglist[num]}.png`;
+                element.src = `images/logos/${imglist[num]}.png`;
                 // element.style.height = "50px";
                 // element.style.margin = "15px auto";
             }
@@ -14,13 +14,13 @@ function createNav(num) {
                 // element.style.height = "63px";
                 // element.style.margin = "10px auto";
             }
-            gif = !gif; 
+            gif = !gif;
         }
     }));
-    
+
     let nav = document.createElement("nav");
     document.body.append(nav);
-    nav.appendChild(Object.assign(document.createElement("ul"), {id: "nav-list"}));
+    nav.appendChild(Object.assign(document.createElement("ul"), { id: "nav-list" }));
 
     let navlist = ["About", "Analysis", "Simulator", "Resources"];
     let filelist = ["index", "analysis", "sim", "resources"];
@@ -28,7 +28,7 @@ function createNav(num) {
         let list = document.getElementById("nav-list");
         let item = document.createElement("li");
         list.appendChild(item);
-        
+
         let link = document.createElement("a");
         link.setAttribute("href", `${filelist[i]}.html`);
         link.textContent = navlist[i];
@@ -50,13 +50,13 @@ function createCards() {
         menu = document.getElementById("menu");
         menu.appendChild(card);
 
-        card.appendChild(Object.assign(document.createElement("h3"), {textContent: cardtitles[i]}));
+        card.appendChild(Object.assign(document.createElement("h3"), { textContent: cardtitles[i] }));
 
         card.addEventListener("click", () => {
-            for (i = 0; i < cards.length; i++) {cards[i].className = "card";}
+            for (i = 0; i < cards.length; i++) { cards[i].className = "card"; }
             card.classList.toggle("card-active");
             let anchor = document.getElementById(sections[card.id].id);
-            for (i = 0; i < sections.length; i++) {sections[i].style.paddingTop = "initial";}
+            for (i = 0; i < sections.length; i++) { sections[i].style.paddingTop = "initial"; }
             anchor.style.paddingTop = "45px";
             window.location.href = `#${anchor.id}`;
         });
@@ -64,29 +64,29 @@ function createCards() {
 }
 
 let url = (window.location.pathname);
-let file = url.substring(url.lastIndexOf('/')+1);
+let file = url.substring(url.lastIndexOf('/') + 1);
 
 if (file.includes("analysis")) {
-    window.onscroll = function() {scrollFunction()};
+    window.onscroll = function () { scrollFunction() };
     function scrollFunction() {
         let positions = [];
-        for (s = 0; s < sections.length; s++) {positions.push(sections[s].offsetTop);}
-        
+        for (s = 0; s < sections.length; s++) { positions.push(sections[s].offsetTop); }
+
         let scroll = window.scrollY + 421;
         let closest = positions.reverse().find(e => e <= scroll);
         positions.reverse()
 
         let index = positions.indexOf(closest);
-        for (i = 0; i < cards.length; i++) {cards[i].className = "card";}
+        for (i = 0; i < cards.length; i++) { cards[i].className = "card"; }
         cards[index].classList.toggle("card-active");
 
         imglist = ["blank", "fptp", "ranked", "approval", "score"];
         document.getElementById("ballot").src = `images/ballots/${imglist[index]}.png`;
-    }   
+    }
 }
 
 function createFooter() {
     let yr = new Date().getFullYear();
     let footer = document.getElementsByTagName("footer");
-    footer[0].append(Object.assign(document.createElement("small"), {innerHTML: "Copyright &copy 2021 Friday Dinner. All Rights Reserved."}));
+    footer[0].append(Object.assign(document.createElement("small"), { innerHTML: "Copyright &copy 2021 Friday Dinner. All Rights Reserved." }));
 }

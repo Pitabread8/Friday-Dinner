@@ -54,23 +54,24 @@ function draw() {
     text(vval, width / 2 + 415, 43);
     textSize(12);
 
-	if (cval > cnums) {
-		for (c = 0; c < cval - cnums; c++) {
+    if (cval > cnums) {
+        for (c = 0; c < cval - cnums; c++) {
             let random = Math.floor(Math.random() * colors.length);
-        cs.push(new Candidate(cnums + c, colors[random]));
+            cs.push(new Candidate(cnums + c, colors[random]));
             votes.push(0);
             colors.splice(random, 1);
         }
-		cnums = cval;
-		for (v = 0; v < vnums; v++) {vs[v]["candidates"] = cs;}
-	}
-	if (cval < cnums) {
-		for (c = 0; c < cnums - cval; c++) {colors.push(cs.pop()["color"]);}
-		cnums = cval;
-		for (v = 0; v < vnums; v++) {vs[v]["candidates"] = cs;}
-	}
+        cnums = cval;
+        for (v = 0; v < vnums; v++) { vs[v]["candidates"] = cs; }
+    }
+    if (cval < cnums) {
+        for (c = 0; c < cnums - cval; c++) { colors.push(cs.pop()["color"]); }
+        cnums = cval;
+        for (v = 0; v < vnums; v++) { vs[v]["candidates"] = cs; }
+    }
 
     changeSystem();
+    cs.forEach(c => c.update());
     cs.forEach(c => c.display());
 
     fill(224, 122, 95, 200)
@@ -112,8 +113,8 @@ function draw() {
         text(`Candidate ${i} got ${votes[i]} votes`, width - 3 * length, height - ((i * 1) + 2.25) * length);
     }
     textSize(16);
-    if (winners.length === 1) {text(`The winner is Candidate ${winners}`, width - 3 * length, height - 1.25 * length);}
-    else {text(`It was a tie between Candidates ${winners.join(" and ")}`, width - 3 * length, height - 1.25 * length, width / 8, height);}
+    if (winners.length === 1) { text(`The winner is Candidate ${winners}`, width - 3 * length, height - 1.25 * length); }
+    else { text(`It was a tie between Candidates ${winners.join(" and ")}`, width - 3 * length, height - 1.25 * length, width / 8, height); }
     winners = [];
 }
 
@@ -141,10 +142,25 @@ function countBordaVotes(item, index) { for (let s in item["sorted"]) { votes[it
 function countApprovalVotes(item, index) { for (let d in item["approved"]) { votes[item["approved"][d]]++; } }
 function countScoreVotes(item, index) { for (let d in item["approved"]) { votes[d] += item["approved"][d]; } }
 
+function mousePressed() {
+    for (i = cs.length - 1; i >= 0; i--) {
+        if (mouseX > cs[i].x - length && mouseX < cs[i].x + length && mouseY > cs[i].y - length && mouseY < cs[i].y + length) {
+            cs[i].pressed();
+            break;
+        }
+    }
+}
+
+function mouseReleased() {
+    cs.forEach(c => c.dragging = false);
+}
+
 class Shape {
     constructor() {
         this.x = random(3 * length, width - 3 * length);
         this.y = random(3 * length, height - 3 * length);
+        this.offsetX = 0;
+        this.offsetY = 0;
     }
 }
 
@@ -237,6 +253,7 @@ class Candidate extends Shape {
         super();
         this.id = id;
         this.color = color;
+        this.dragging = false;
     }
 
     display() {
@@ -250,5 +267,18 @@ class Candidate extends Shape {
         strokeWeight(0);
         textAlign(CENTER, CENTER);
         text(`Candidate ${this.id}`, this.x, this.y);
+    }
+
+    update() {
+        if (this.dragging) {
+            this.x = mouseX + length + this.offsetX;
+            this.y = mouseY + length + this.offsetY;
+        }
+    }
+
+    pressed() {
+        this.dragging = true;
+        this.offsetX = this.x - length - mouseX;
+        this.offsetY = this.y - length - mouseY;
     }
 }
