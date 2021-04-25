@@ -1,29 +1,3 @@
-function createHead(num) {
-    let titlelist = ["Friday Dinner", "Analysis", "Simulator", "Resources", "Page Not Found"];
-    const template = document.createElement('template');
-    template.innerHTML = `
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>${titlelist[num]}</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-
-        <link rel="icon" type="image/png" href="images/favicon.png"/>
-        <link rel="apple-touch-icon" href="images/favicon.png"/>
-
-        <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-        <meta name="keywords" content="Friday, Dinner, Voting, Candidates"/>
-        <meta name="theme-color" content="#F4F1DE"/>
-
-        <meta property="og:image" content="https://pitabread8.github.io/Friday-Dinner/images/favicon.png"/>
-        <meta property="og:title" content="Friday Dinner"/>
-        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-        <meta property="og:url" content="https://pitabread8.github.io/Friday-Dinner"/>
-        <meta property="og:type" content="website"/>
-    `;
-
-    document.head.appendChild(template.content);
-}
-
 function createNav(num) {
     let imglist = ["about", "analysis", "sim", "resources", "404"];    
     let gif = false;
