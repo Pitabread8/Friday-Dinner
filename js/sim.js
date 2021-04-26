@@ -11,7 +11,7 @@ let menu;
 let colors = ["#81B29A", "#53826C", "#64495A", "#392131", "#AD4865", "#7A163B", "#E07A5F", "#AA4C34", "#F2CC8F", "#BE9B61"]
 
 function setup() {
-    createCanvas(windowWidth, windowHeight / 1.5);
+    createCanvas(windowWidth, windowHeight - 220);
     background("#F4F1DE");
     strokeWeight(0);
     rectMode(CENTER)
@@ -70,13 +70,15 @@ function draw() {
         for (v = 0; v < vnums; v++) { vs[v]["candidates"] = cs; }
     }
 
+    vs.forEach(v => v.update());
     changeSystem();
+
     cs.forEach(c => c.update());
     cs.forEach(c => c.display());
 
     fill(224, 122, 95, 200)
     rect(width - 3 * length, height / 2, 5 * length, height)
-
+    
     if (vval > vnums) {
         for (v = 0; v < vval - vnums; v++) { vs.push(new Voter(cs)); }
         vnums = vval;
@@ -143,24 +145,53 @@ function countApprovalVotes(item, index) { for (let d in item["approved"]) { vot
 function countScoreVotes(item, index) { for (let d in item["approved"]) { votes[d] += item["approved"][d]; } }
 
 function mousePressed() {
+    let found = false;
+
     for (i = cs.length - 1; i >= 0; i--) {
-        if (mouseX > cs[i].x - length && mouseX < cs[i].x + length && mouseY > cs[i].y - length && mouseY < cs[i].y + length) {
-            cs[i].pressed();
-            break;
+        if (found === false) {
+            if (mouseX > cs[i].x - length && mouseX < cs[i].x + length && mouseY > cs[i].y - length && mouseY < cs[i].y + length) {
+                cs[i].pressed();
+                found = true;
+            }
         }
     }
+
+    for (i = vs.length - 1; i >= 0; i--) {
+        if (found === false) {
+            if (mouseX > vs[i].x - length && mouseX < vs[i].x + length && mouseY > vs[i].y - length && mouseY < vs[i].y + length) {
+                vs[i].pressed();
+                found = true;
+            }
+        }
+    }
+
+    found = true;
 }
 
 function mouseReleased() {
     cs.forEach(c => c.dragging = false);
+    vs.forEach(v => v.dragging = false);
 }
 
 class Shape {
     constructor() {
-        this.x = random(3 * length, width - 3 * length);
+        this.x = random(3 * length, width - 6 * length - length);
         this.y = random(3 * length, height - 3 * length);
         this.offsetX = 0;
         this.offsetY = 0;
+    }
+
+    update() {
+        if (this.dragging) {
+            this.x = mouseX + length + this.offsetX;
+            this.y = mouseY + length + this.offsetY;
+        }
+    }
+
+    pressed() {
+        this.dragging = true;
+        this.offsetX = this.x - length - mouseX;
+        this.offsetY = this.y - length - mouseY;
     }
 }
 
@@ -267,18 +298,5 @@ class Candidate extends Shape {
         strokeWeight(0);
         textAlign(CENTER, CENTER);
         text(`Candidate ${this.id}`, this.x, this.y);
-    }
-
-    update() {
-        if (this.dragging) {
-            this.x = mouseX + length + this.offsetX;
-            this.y = mouseY + length + this.offsetY;
-        }
-    }
-
-    pressed() {
-        this.dragging = true;
-        this.offsetX = this.x - length - mouseX;
-        this.offsetY = this.y - length - mouseY;
     }
 }
