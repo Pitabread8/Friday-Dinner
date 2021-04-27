@@ -31,15 +31,10 @@ body {
 
 #logo {
     width: auto;
-    height: 50px;
+    height: 60px;
     display: block;
-    margin: 15px auto;
-}
-
-/* #analysis #logo {
-    height: 63px;
     margin: 10px auto;
-} */
+}
 
 h1 {
     color: var(--shade);

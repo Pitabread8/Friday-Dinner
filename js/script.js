@@ -6,13 +6,9 @@ function createNav(num) {
             let element = document.getElementById("logo");
             if (gif === true) {
                 element.src = `images/logos/${imglist[num]}.png`;
-                // element.style.height = "50px";
-                // element.style.margin = "15px auto";
             }
             else {
                 element.src = `images/logos/${imglist[num]}.gif`;
-                // element.style.height = "63px";
-                // element.style.margin = "10px auto";
             }
             gif = !gif;
         }
