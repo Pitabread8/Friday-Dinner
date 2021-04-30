@@ -1,7 +1,7 @@
 function createNav(num) {
     let imglist = ["about", "analysis", "sim", "resources", "404"];
-    let gif = false;
-    document.body.append(Object.assign(document.createElement("img"), { id: "logo" }, { src: `images/logos/${imglist[num]}.png` }, {
+    let gif = true;
+    document.body.append(Object.assign(document.createElement("img"), { id: "logo" }, { src: `images/logos/${imglist[num]}.gif` }, {
         onclick: function () {
             let element = document.getElementById("logo");
             if (gif === true) {
@@ -79,6 +79,35 @@ if (file.includes("analysis")) {
         imglist = ["blank", "fptp", "ranked", "approval", "score"];
         document.getElementById("ballot").src = `images/ballots/${imglist[index]}.png`;
     }
+}
+
+let modalstatus = false;
+
+function changeModal() {
+    let modal = document.getElementById("help-modal");
+    if (!modalstatus) {
+        modal.style.display = "initial";
+    }
+    else {
+        modal.style.display = "none";
+    }
+    modalstatus = !modalstatus;
+    // document.getElementById("help-modal").style.display = "none";
+}
+
+let slideIndex;
+
+function currentSlide(n) { showSlides(slideIndex = n); }
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("slides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+    for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
 
 function createFooter() {

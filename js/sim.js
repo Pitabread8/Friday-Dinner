@@ -11,13 +11,13 @@ let menu;
 let colors = ["#81B29A", "#53826C", "#64495A", "#392131", "#AD4865", "#7A163B", "#E07A5F", "#AA4C34", "#F2CC8F", "#BE9B61"]
 
 function setup() {
-    createCanvas(windowWidth, windowHeight - 220);
+    createCanvas(windowWidth, windowHeight - 320);
     background("#F4F1DE");
     strokeWeight(0);
     rectMode(CENTER)
 
     menu = createSelect();
-    menu.position(length, 150);
+    menu.position(length, 270);
     menu.option("Plurality");
     menu.option("Ranked");
     menu.option("Approval");
@@ -32,11 +32,11 @@ function setup() {
     for (v = 0; v < vnums; v++) { vs.push(new Voter(cs)); }
 
     cslider = createSlider(3, 10, 3, 1);
-    cslider.position(width / 2 - 200, 150);
+    cslider.position(width / 2 - 200, 270);
     cslider.style('width', '600px');
 
     vslider = createSlider(3, 20, 7, 1);
-    vslider.position(width / 2 - 200, 180);
+    vslider.position(width / 2 - 200, 300);
     vslider.style("width", "600px");
     vslider.addClass("slider");
 }
@@ -48,10 +48,10 @@ function draw() {
     let vval = vslider.value();
     textSize(20);
     fill("#E07A5F");
-    text("Candidates", width / 2 - 260, 13);
-    text("Voters", width / 2 - 240, 43);
-    text(cval, width / 2 + 415, 13);
-    text(vval, width / 2 + 415, 43);
+    text("Candidates", width / 2 - 260, 20);
+    text("Voters", width / 2 - 240, 50);
+    text(cval, width / 2 + 415, 20);
+    text(vval, width / 2 + 415, 50);
     textSize(12);
 
     if (cval > cnums) {

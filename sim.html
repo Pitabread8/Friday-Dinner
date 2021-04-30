@@ -28,6 +28,53 @@
 
 <body id="sim">
     <script>createNav(2);</script>
-    <script src="js/sim.js"></script>
+    <main>
+        <h1>Voting Simulator</h1>
+        <p class="info-p">We created a simulator to test the four systems detailed in the <a href="analysis.html">analysis<a href="analysis.html"></a> page.</p>
+        <button onclick="changeModal();">How do I use it?</button>
+        <div id="help-modal">
+            <div class="help-content">
+                <span class="close" onclick="changeModal();">&times;</span>
+                <div class="slides">
+                    <h2>Changing Systems</h2>
+                    <p class="info-p">
+                        In order to see how each situation is counted, select different systems in the menu. 
+                        Note: Ranked voting was counted using Borda count.
+                    </p>
+                    <video width="90%" height="auto" muted autoplay loop>
+                        <source src="videos/menu.mp4" type="video/mp4">
+                        Your browser does not support video.
+                    </video>
+                </div>
+                <div class="slides">
+                    <h2>Changing Candidate & Voter Numbers</h2>
+                    <p class="info-p">
+                        In order to increase or decrease the number of candidates and voters, move the respective slider.
+                    </p>
+                    <video width="90%" height="auto" muted autoplay loop>
+                        <source src="videos/slider.mp4" type="video/mp4">
+                        Your browser does not support video.
+                    </video>
+                </div>
+                <div class="slides">
+                    <h2>Dragging & Dropping</h2>
+                    <p class="info-p">
+                        In order to move the candidates and voters around, simply drag and drop. The results will update automatically.
+                    </p>
+                    <video width="90%" height="auto" muted autoplay loop>
+                        <source src="videos/drag.mp4" type="video/mp4">
+                        Your browser does not support video.
+                    </video>
+                </div>
+                <div style="text-align: center;">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+        <script>currentSlide(1);</script>
+        <script src="js/sim.js"></script>
+    </main>
     <footer><script>createFooter();</script></footer>
 </body>

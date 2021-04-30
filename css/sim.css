@@ -6,9 +6,87 @@
     --shade: #AA4C34;
 }
 
-canvas {
-    display: block;
+h1 {
+    font-size: 3vh;
 }
+
+h2, p {
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: auto;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: var(--main);
+    color: var(--eggshell);
+}
+
+button:hover {
+    background-color: var(--shade);
+    color: var(--eggshell);
+}
+
+#help-modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0, 0.6);
+    z-index: 30;
+    display: none;
+}
+
+.help-content {
+    width: 60vw;
+    height: 60vh;
+    background-color: var(--eggshell);
+    border: 10px solid var(--shade);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    color: var(--main);
+    float: right;
+    margin: auto 20px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.slides {display: none;}
+
+video {
+    display: block;
+    margin: auto;
+}
+
+.dot {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin: 0 2px;
+    background-color: var(--main);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {background-color: var(--shade);}
+
+canvas {display: block;}
 
 select {
     background-color: var(--eggshell);
