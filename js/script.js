@@ -92,13 +92,10 @@ function changeModal() {
         modal.style.display = "none";
     }
     modalstatus = !modalstatus;
-    // document.getElementById("help-modal").style.display = "none";
 }
 
 let slideIndex;
-
 function currentSlide(n) { showSlides(slideIndex = n); }
-
 function showSlides(n) {
     let slides = document.getElementsByClassName("slides");
     let dots = document.getElementsByClassName("dot");
@@ -109,6 +106,25 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+
+// let visible = [];
+
+// function isInViewport() {
+//     let sources = document.getElementsByTagName("img");
+//     for (i = 0; i < sources.length; i++) {
+//         let rect = sources[i].getBoundingClientRect();
+//         if (
+//             rect.top >= 0 &&
+//             rect.left >= 0 &&
+//             rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//         ) {
+//             visible.push(i);
+//         };
+//     }
+//     sources[visible[2]].style.width = "300px";
+//     visible = [];
+// }
 
 function createFooter() {
     let yr = new Date().getFullYear();

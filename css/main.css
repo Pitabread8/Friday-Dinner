@@ -268,6 +268,42 @@ tr:nth-child(even) {background-color: #DDD;}
     padding: 4px;
 }
 
-#return-link:hover {
+#return-link:hover {color: var(--shade);}
+
+#resources ul {
+    margin: 0px;
+}
+
+.resource {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.desc {
+    margin-left: 10px;
     color: var(--shade);
+    width: 25vw;
+}
+
+#vertical-snap {
+    margin: 0 auto;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1rem;
+    height: 83vh;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y mandatory;
+    justify-content: center;
+}
+
+#vertical-snap > div {
+    scroll-snap-align: center;
+}
+
+#vertical-snap img {
+    width: 200px;
+    object-fit: contain;
+    border-radius: 1rem;
 }
