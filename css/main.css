@@ -242,6 +242,36 @@ tr:nth-child(even) {background-color: #DDD;}
     height: auto;
 }
 
+#resources main {
+    margin: 20px auto 50px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 50px;
+    height: auto;
+    justify-content: center;
+}
+
+#resources h1 {
+    color: var(--main);
+}
+
+.resource {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#resources main img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.desc {
+    margin-left: 10px;
+    color: var(--shade);
+    width: 25vw;
+}
+
 #error main {
     display: flex;
     justify-content: center;
@@ -269,41 +299,3 @@ tr:nth-child(even) {background-color: #DDD;}
 }
 
 #return-link:hover {color: var(--shade);}
-
-#resources ul {
-    margin: 0px;
-}
-
-.resource {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.desc {
-    margin-left: 10px;
-    color: var(--shade);
-    width: 25vw;
-}
-
-#vertical-snap {
-    margin: 0 auto;
-    display: grid;
-    grid-auto-flow: row;
-    gap: 1rem;
-    height: 83vh;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    scroll-snap-type: y mandatory;
-    justify-content: center;
-}
-
-#vertical-snap > div {
-    scroll-snap-align: center;
-}
-
-#vertical-snap img {
-    width: 200px;
-    object-fit: contain;
-    border-radius: 1rem;
-}
