@@ -58,7 +58,8 @@
                     <div>
                         <h3>Score</h3>
                         <p class="info-p">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Score voting is perfect in situations where something or someone is being judged/reviewed. 
+                            Any situation that requires each candidate to be evaluated individually would also work well.
                         </p>
                     </div>
                 </div>
@@ -108,10 +109,10 @@
                     <figcaption class="info-p">
                         The winning candidate in Plurality is generally the one nearest to the biggest cluster of voters, even if the cluster makes up a small percentage of all of 
                         the voters. Below, the majority of voters are on the right side, but the largest cluster of voters is near <span style="color: #64495A;">Candidate 2</span>,
-                        which is isolated on the left. The votes on the right side are split evenly by <span style="color: #F2CC8F;">Candidate 0</span> and 
-                        <span style="color: #E07A5F;">Candidate 1</span>, removing the chance of either of them winning.
+                        which is isolated on the left. The votes on the right side are split evenly by <span style="color: #AD4865;">Candidate 0</span> and 
+                        <span style="color: #F2CC8F;">Candidate 1</span>, removing the chance of either of them winning.
                     </figcaption>
-                    <img src="images/sim/fptp.png">
+                    <img src="images/sim/plurality.png">
                 </figure>
             </div>
             <div id="ranked" class="info-c">
@@ -219,9 +220,9 @@
                 </div>
                 <figure class="sim-s">
                     <figcaption class="info-p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        The example below is of Borda Count, so it does not exemplify all Ranked systems, but it does show how all three systems can get around the spoiler effect.
+                        This same situation, in Plurality, awards <span style="color: #64495A;">Candidate 2</span>. However, the majority of voters are closer to <span style="color: #AD4865;">Candidates 0</span> and <span style="color: #F2CC8F;">1</span>. Ranked voting chooses the candidate
+                        closest to more voters, generally the one in the middle of the board/spectrum.
                     </figcaption>
                     <img src="images/sim/ranked.png">
                 </figure>
@@ -256,7 +257,7 @@
                     </tr>
                     <tr>
                         <td>Counting is easy and fast because it uses the same, familiar ballot of Plurality</td>
-                        <td>May pit candidates of the same party against each other to prevent <span id="tooltip" title="when two candidates of the same party/similar political alignment divide their supporters among themselves, likely preventing either of them from winning and leading to the Spoiler Effect.">vote splitting</td>
+                        <td>May pit candidates of the same party against each other to prevent <span id="tooltip" title="when two candidates of the same party/similar political alignment divide their supporters among themselves, likely preventing either of them from winning and leading to the spoiler Effect.">vote splitting</td>
                     </tr>
                 </table>
                 <div class="analysis-s">
@@ -273,10 +274,9 @@
                 </div>
                 <figure class="sim-s">
                     <figcaption class="info-p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Contrary to the previous systems, Approval does not require comparing candidates against each other. The winning candidate will generally be in the center,
+                        but often two candidates with the majority who would normally lose to spoiler effect will tie. This situation is shown above. In Plurality, <span style="color: #64495A;">Candidate 2</span> won; in
+                        Approval, both <span style="color: #AD4865;">Candidate 0</span> and <span style="color: #F2CC8F;">Candidate 1</span> win.
                     </figcaption>
                     <img src="images/sim/approval.png">
                 </figure>
@@ -305,7 +305,7 @@
                     </tr>
                     <tr>
                         <td>A candidate’s score is not affected by the other candidates they go against</td>
-                        <td>Vulnerable <span id="tooltip" title="A reverse situation of the spoiler effect, when one not as well liked candidate moves closer to another minority candidate and &quot;helps&quot; the latter defeat the majority candidate.">reverse spoiler effect</span>, leading to <span id="tooltip" title="A tactic used when voting for someone other than a preferred candidate results in a more preferable outcome, like when two large parties dominate the system and voting for a smaller party will result in a wasted vote.">strategic voting</span></td>
+                        <td>Vulnerable to <span id="tooltip" title="A reverse situation of the spoiler effect, when one not as well liked candidate moves closer to another minority candidate and &quot;helps&quot; the latter defeat the majority candidate.">reverse spoiler effect</span>, leading to <span id="tooltip" title="A tactic used when voting for someone other than a preferred candidate results in a more preferable outcome, like when two large parties dominate the system and voting for a smaller party will result in a wasted vote.">strategic voting</span></td>
                     </tr>
                     <tr>
                         <td>Fights against <span id="tooltip" title="A situation that can result from a majority rules system, in which the majority uses its power to advance its own interests, while ignoring the interests and/or welfare/rights of the minority/ies. This is not good in a democracy because everyone must be represented, not just the majority.">tyranny of the majority</span></td>
@@ -320,16 +320,17 @@
                         <br><br>
                         Something to note is that because this system is susceptible to the reverse spoiler effect, voters may rank candidates that are not their first choice lower than 
                         they really believe in fear that they are reducing their first choice candidate's chance of winning.
-                        For example, they may give all candidates except their first choice the score of the lowest possible score (usually zero or one) and their first choice the 
+                        For example, they may give all candidates except their first choice the lowest possible score (usually zero or one) and their first choice the 
                         highest score (usually five or ten) even if they those numbers don't reflect their true feelings.
                     </p>
                 </div>
                 <figure class="sim-s">
                     <figcaption class="info-p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Score voting also does not require voters to compare candidates.
+                        However, it does have a similar outcome to Ranked voting, especially Borda count.
+                        In the below example, using Plurality, either <span style="color: #AD4865;">Candidate 0</span> or <span style="color: #F2CC8F;">Candidate 1</span> would win, depending 
+                        on where the three open voters voted for. But in Score, <span style="color: #AD4865;">Candidate 0</span> gets a boost from the voters near 
+                        <span style="color: #64495A;">Candidate 2</span>, allowing it to win.
                     </figcaption>
                     <img src="images/sim/score.png">
                 </figure>
