@@ -76,7 +76,7 @@ if (file.includes("analysis")) {
         for (i = 0; i < cards.length; i++) { cards[i].className = "card"; }
         cards[index].classList.toggle("card-active");
 
-        imglist = ["blank", "fptp", "ranked", "approval", "score"];
+        imglist = ["blank", "plurality", "ranked", "approval", "score"];
         document.getElementById("ballot").src = `images/ballots/${imglist[index]}.png`;
     }
 }
@@ -107,27 +107,8 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-// let visible = [];
-
-// function isInViewport() {
-//     let sources = document.getElementsByTagName("img");
-//     for (i = 0; i < sources.length; i++) {
-//         let rect = sources[i].getBoundingClientRect();
-//         if (
-//             rect.top >= 0 &&
-//             rect.left >= 0 &&
-//             rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-//             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-//         ) {
-//             visible.push(i);
-//         };
-//     }
-//     sources[visible[2]].style.width = "300px";
-//     visible = [];
-// }
-
 function createFooter() {
-    let yr = new Date().getFullYear();
+    let year = new Date().getFullYear();
     let footer = document.getElementsByTagName("footer");
-    footer[0].append(Object.assign(document.createElement("small"), { innerHTML: "Copyright &copy 2021 Friday Dinner. All Rights Reserved." }));
+    footer[0].append(Object.assign(document.createElement("small"), { innerHTML: `Copyright &copy ${year} Friday Dinner. All Rights Reserved.` }));
 }
